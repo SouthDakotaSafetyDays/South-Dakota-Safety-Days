@@ -152,6 +152,21 @@
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
         }
+
+        .success-message {
+            display: none;
+            background: #27ae60;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 20px 0;
+            font-size: 1.1rem;
+        }
+
+        .success-message.show {
+            display: block;
+        }
         
         .footer {
             background: #2c3e50;
@@ -182,7 +197,11 @@
     <div class="container">
         <div class="main-content">
             <div class="intro">
-                <p>Join our team of dedicated volunteers making South Dakota communities safer. Whether you can help at events, assist with educational outreach, or support administrative tasks, your time makes a real difference.</p>
+                <p>Join our team of dedicated volunteers at South Dakota Safety Days making communities safer. Whether you can help at events, assist with educational outreach, or support administrative tasks, your time makes a real difference. If you have specific questions, please email us at southdakotasafetydays@gmail.com</p>
+            </div>
+
+            <div class="success-message" id="successMessage">
+                Thank you for submitting the form! We will reach out to you with details.
             </div>
 
             <form id="volunteerForm">
@@ -236,7 +255,6 @@
                 <div class="info-section">
                     <h3>Volunteer Benefits</h3>
                     <ul>
-                        <li>Free safety training and certification opportunities</li>
                         <li>Make a meaningful impact in your community</li>
                         <li>Certificate of service for volunteer hours</li>
                         <li>Connect with fellow safety advocates</li>
@@ -247,7 +265,6 @@
                     <h3>Requirements</h3>
                     <ul>
                         <li>Must be 18 years or older (16+ with parental consent)</li>
-                        <li>Background check required for certain roles</li>
                         <li>Attend brief orientation session</li>
                         <li>Commitment to promoting safety in our communities</li>
                     </ul>
@@ -297,6 +314,14 @@
                         `Areas of Interest: ${interests.join(', ')}%0D%0A%0D%0A` +
                         `Availability & Comments:%0D%0A${availability}`;
             
+            // Show success message
+            document.getElementById('successMessage').classList.add('show');
+            document.getElementById('volunteerForm').style.display = 'none';
+            
+            // Scroll to success message
+            document.getElementById('successMessage').scrollIntoView({ behavior: 'smooth', block: 'center' });
+            
+            // Open email client
             window.location.href = `mailto:southdakotasafetydays@gmail.com?subject=${subject}&body=${body}`;
         });
     </script>
