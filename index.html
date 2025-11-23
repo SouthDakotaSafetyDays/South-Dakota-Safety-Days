@@ -24,23 +24,86 @@
             padding: 0 20px;
         }
         
-        .header {
-            background: linear-gradient(135deg, #2c3e50, #3498db);
-            color: white;
-            text-align: center;
-            padding: 60px 0;
+        /* Slideshow Header Styles */
+        .slideshow-header {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            overflow: hidden;
             margin-bottom: 40px;
         }
         
-        .header h1 {
-            font-size: 3rem;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
         }
         
-        .header p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
+        .slide.active {
+            opacity: 1;
+        }
+        
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+        
+        /* Dark overlay for better text visibility */
+        .slide-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 120px;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            padding-bottom: 40px;
+        }
+        
+        .slide-text {
+            text-align: center;
+            color: white;
+        }
+        
+        .slide-text p {
+            font-size: 1.3rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        /* Slideshow Navigation Dots */
+        .slideshow-dots {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 10;
+        }
+        
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.5);
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        
+        .dot.active {
+            background: white;
+        }
+        
+        .dot:hover {
+            background: rgba(255,255,255,0.8);
         }
         
         .header-content {
@@ -307,8 +370,12 @@
         }
         
         @media (max-width: 768px) {
-            .header h1 {
-                font-size: 2rem;
+            .slideshow-header {
+                height: 350px;
+            }
+            
+            .slide-text p {
+                font-size: 1rem;
             }
             
             .logo {
@@ -343,13 +410,46 @@
     </style>
 </head>
 <body>
-    <div class="header">
-        <div class="container">
-            <div class="header-content">
-                <img src="SDSD marketing 1.png" alt="South Dakota Safety Days Logo" style="max-width: 300px; margin-bottom: 20px;">
-                <h1>South Dakota Safety Days</h1>
+    <!-- Slideshow Header -->
+    <div class="slideshow-header">
+        <div class="slide active">
+            <img src="images/slide1.png" alt="South Dakota Safety Days - Emergency Vehicles">
+        </div>
+        <div class="slide">
+            <img src="images/slide2.png" alt="South Dakota Safety Days - First Responders">
+        </div>
+        <div class="slide">
+            <img src="images/slide3.jpg" alt="Police Officers">
+        </div>
+        <div class="slide">
+            <img src="images/slide4.jpg" alt="Emergency Medical Services">
+        </div>
+        <div class="slide">
+            <img src="images/slide5.jpg" alt="Firefighters with Rescue Equipment">
+        </div>
+        <div class="slide">
+            <img src="images/slide6.jpg" alt="K-9 Unit">
+        </div>
+        <div class="slide">
+            <img src="images/slide7.jpg" alt="Firefighter in Action">
+        </div>
+        
+        <!-- Text Overlay -->
+        <div class="slide-overlay">
+            <div class="slide-text">
                 <p>Promoting Safety Awareness Across South Dakota</p>
             </div>
+        </div>
+        
+        <!-- Navigation Dots -->
+        <div class="slideshow-dots">
+            <span class="dot active" onclick="goToSlide(0)"></span>
+            <span class="dot" onclick="goToSlide(1)"></span>
+            <span class="dot" onclick="goToSlide(2)"></span>
+            <span class="dot" onclick="goToSlide(3)"></span>
+            <span class="dot" onclick="goToSlide(4)"></span>
+            <span class="dot" onclick="goToSlide(5)"></span>
+            <span class="dot" onclick="goToSlide(6)"></span>
         </div>
     </div>
 
@@ -391,29 +491,26 @@
                 <a href="#" class="donation-btn">Learn More</a>
             </div>
 
-           
-
             <div class="section">
                <div class="link-card">
-    <h4>Safety Resources</h4>
-    <p>Access important safety information and guidelines</p>
-    <a href="safety-resources.html">View Resources</a>
-</div>
-                    <div class="link-card">
-                        <h4>Event Schedule</h4>
-                        <p>Check out our full schedule of safety events</p>
-                        <a href="#">View Schedule</a>
-                    </div>
-                   <div class="link-card">
-    <h4>Volunteer</h4>
-    <p>Join our team of safety advocates</p>
-    <a href="volunteer.html">Get Involved</a>
-</div>
-                    <div class="link-card">
-                        <h4>Contact Us</h4>
-                        <p>Get in touch with our team</p>
-                        <a href="#">Contact Info</a>
-                    </div>
+                    <h4>Safety Resources</h4>
+                    <p>Access important safety information and guidelines</p>
+                    <a href="safety-resources.html">View Resources</a>
+                </div>
+                <div class="link-card">
+                    <h4>Event Schedule</h4>
+                    <p>Check out our full schedule of safety events</p>
+                    <a href="#">View Schedule</a>
+                </div>
+                <div class="link-card">
+                    <h4>Volunteer</h4>
+                    <p>Join our team of safety advocates</p>
+                    <a href="volunteer.html">Get Involved</a>
+                </div>
+                <div class="link-card">
+                    <h4>Contact Us</h4>
+                    <p>Get in touch with our team</p>
+                    <a href="#">Contact Info</a>
                 </div>
             </div>
         </div>
@@ -425,5 +522,34 @@
             <p>Promoting safety awareness across South Dakota communities</p>
         </div>
     </div>
+
+    <!-- Slideshow JavaScript -->
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.dot');
+        const totalSlides = slides.length;
+        
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            slides[index].classList.add('active');
+            dots[index].classList.add('active');
+        }
+        
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            showSlide(currentSlide);
+        }
+        
+        function goToSlide(index) {
+            currentSlide = index;
+            showSlide(currentSlide);
+        }
+        
+        // Auto-advance slides every 5 seconds
+        setInterval(nextSlide, 5000);
+    </script>
 </body>
 </html>
