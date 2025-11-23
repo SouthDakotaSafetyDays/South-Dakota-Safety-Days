@@ -24,7 +24,6 @@
             padding: 0 20px;
         }
         
-        /* Slideshow Header Styles */
         .slideshow-header {
             position: relative;
             width: 100%;
@@ -54,7 +53,6 @@
             object-position: center;
         }
         
-        /* Dark overlay for better text visibility */
         .slide-overlay {
             position: absolute;
             top: 0;
@@ -93,7 +91,6 @@
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
         
-        /* Slideshow Navigation Dots */
         .slideshow-dots {
             position: absolute;
             bottom: 15px;
@@ -121,19 +118,6 @@
             background: rgba(255,255,255,0.8);
         }
         
-        .header-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        
-        .logo {
-            max-width: 250px;
-            height: auto;
-            margin-bottom: 20px;
-            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
-        }
-        
         .main-content {
             background: white;
             padding: 40px;
@@ -152,103 +136,6 @@
             margin-bottom: 20px;
             border-bottom: 3px solid #3498db;
             padding-bottom: 10px;
-        }
-        
-        .photo-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            margin: 30px 0;
-        }
-        
-        .photo-item {
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-        
-        .photo-item:hover {
-            transform: translateY(-5px);
-        }
-        
-        .photo-item img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-bottom: 3px solid #3498db;
-        }
-        
-        .photo-item p {
-            padding: 15px;
-            color: #555;
-            font-size: 0.95rem;
-            text-align: center;
-        }
-        
-        .social-feed-section {
-            background: #f8f9fb;
-            padding: 30px;
-            border-radius: 10px;
-            margin-top: 40px;
-        }
-        
-        .social-feed-section h3 {
-            color: #2c3e50;
-            text-align: center;
-            margin-bottom: 15px;
-            font-size: 1.5rem;
-        }
-        
-        .social-feed-section p {
-            text-align: center;
-            margin-bottom: 25px;
-            color: #666;
-        }
-        
-        .social-embed {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-        
-        .instagram-feed, .facebook-feed {
-            background: white;
-            padding: 25px;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-        }
-        
-        .instagram-feed h4, .facebook-feed h4 {
-            color: #2c3e50;
-            margin-bottom: 15px;
-            font-size: 1.2rem;
-        }
-        
-        .feed-link {
-            display: inline-block;
-            padding: 12px 25px;
-            background: #3498db;
-            color: white;
-            text-decoration: none;
-            border-radius: 25px;
-            font-weight: bold;
-            transition: all 0.3s ease;
-        }
-        
-        .feed-link:hover {
-            background: #2980b9;
-            transform: translateY(-2px);
-        }
-        
-        .instagram-feed .feed-link {
-            background: #e4405f;
-        }
-        
-        .instagram-feed .feed-link:hover {
-            background: #c13584;
         }
         
         .event-details {
@@ -340,13 +227,6 @@
             box-shadow: 0 6px 20px rgba(0,0,0,0.3);
         }
         
-        .links-section {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin: 40px 0;
-        }
-        
         .link-card {
             background: white;
             padding: 30px;
@@ -354,6 +234,7 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             text-align: center;
             transition: transform 0.3s ease;
+            margin-bottom: 20px;
         }
         
         .link-card:hover {
@@ -401,26 +282,7 @@
                 font-size: 1rem;
             }
             
-            .logo {
-                max-width: 180px;
-                margin-bottom: 15px;
-            }
-            
             .main-content {
-                padding: 20px;
-            }
-            
-            .photo-gallery {
-                grid-template-columns: 1fr;
-                gap: 15px;
-            }
-            
-            .social-embed {
-                grid-template-columns: 1fr;
-                gap: 15px;
-            }
-            
-            .social-feed-section {
                 padding: 20px;
             }
             
@@ -433,13 +295,12 @@
     </style>
 </head>
 <body>
-    <!-- Slideshow Header -->
     <div class="slideshow-header">
         <div class="slide active">
-            <img src="images/slide1.png" alt="South Dakota Safety Days - Emergency Vehicles">
+            <img src="images/slide1.png" alt="South Dakota Safety Days">
         </div>
         <div class="slide">
-            <img src="images/slide2.png" alt="South Dakota Safety Days - First Responders">
+            <img src="images/slide2.png" alt="South Dakota Safety Days">
         </div>
         <div class="slide">
             <img src="images/slide3.jpg" alt="Police Officers">
@@ -448,7 +309,7 @@
             <img src="images/slide4.jpg" alt="Emergency Medical Services">
         </div>
         <div class="slide">
-            <img src="images/slide5.jpg" alt="Firefighters with Rescue Equipment">
+            <img src="images/slide5.jpg" alt="Firefighters">
         </div>
         <div class="slide">
             <img src="images/slide6.jpg" alt="K-9 Unit">
@@ -457,7 +318,6 @@
             <img src="images/slide7.jpg" alt="Firefighter in Action">
         </div>
         
-        <!-- Text Overlay with Big Title -->
         <div class="slide-overlay">
             <div class="slide-text">
                 <h1>South Dakota Safety Days</h1>
@@ -466,7 +326,6 @@
             </div>
         </div>
         
-        <!-- Navigation Dots -->
         <div class="slideshow-dots">
             <span class="dot active" onclick="goToSlide(0)"></span>
             <span class="dot" onclick="goToSlide(1)"></span>
@@ -517,7 +376,7 @@
             </div>
 
             <div class="section">
-               <div class="link-card">
+                <div class="link-card">
                     <h4>Safety Resources</h4>
                     <p>Access important safety information and guidelines</p>
                     <a href="safety-resources.html">View Resources</a>
@@ -548,7 +407,6 @@
         </div>
     </div>
 
-    <!-- Slideshow JavaScript -->
     <script>
         let currentSlide = 0;
         const slides = document.querySelectorAll('.slide');
@@ -558,7 +416,6 @@
         function showSlide(index) {
             slides.forEach(slide => slide.classList.remove('active'));
             dots.forEach(dot => dot.classList.remove('active'));
-            
             slides[index].classList.add('active');
             dots[index].classList.add('active');
         }
@@ -573,7 +430,6 @@
             showSlide(currentSlide);
         }
         
-        // Auto-advance slides every 5 seconds
         setInterval(nextSlide, 5000);
     </script>
 </body>
