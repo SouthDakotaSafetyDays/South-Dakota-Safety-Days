@@ -339,6 +339,347 @@
 
     <div class="container">
         <div class="main-content">
+            <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>South Dakota Safety Days</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .slideshow-header {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            overflow: hidden;
+            margin-bottom: 40px;
+        }
+        
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+        }
+        
+        .slide.active {
+            opacity: 1;
+        }
+        
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+        
+        .slide-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.4);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .slide-text {
+            text-align: center;
+            color: white;
+        }
+        
+        .slide-text h1 {
+            font-size: 3.5rem;
+            font-weight: bold;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.7);
+            margin-bottom: 10px;
+        }
+        
+        .slide-text h2 {
+            font-size: 2rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+            margin-bottom: 10px;
+        }
+        
+        .slide-text p {
+            font-size: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .slideshow-dots {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 10;
+        }
+        
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.5);
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        
+        .dot.active {
+            background: white;
+        }
+        
+        .dot:hover {
+            background: rgba(255,255,255,0.8);
+        }
+        
+        .main-content {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        .section h2 {
+            color: #2c3e50;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        
+        .event-details {
+            background: #ecf0f1;
+            padding: 30px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .event-details h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .detail-item {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .detail-item strong {
+            color: #2c3e50;
+            display: inline-block;
+            width: 100px;
+        }
+        
+        .social-links {
+            text-align: center;
+            margin: 40px 0;
+        }
+        
+        .social-links h3 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+        
+        .social-btn {
+            display: inline-block;
+            margin: 10px;
+            padding: 15px 30px;
+            background: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+        }
+        
+        .social-btn:hover {
+            background: #2980b9;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+        }
+        
+        .social-btn.facebook { background: #3b5998; }
+        .social-btn.facebook:hover { background: #2d4373; }
+        
+        .social-btn.instagram { background: #e4405f; }
+        .social-btn.instagram:hover { background: #c13584; }
+        
+        .donation-section {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            margin: 40px 0;
+        }
+        
+        .donation-btn {
+            display: inline-block;
+            margin: 20px 10px;
+            padding: 18px 35px;
+            background: white;
+            color: #e74c3c;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .donation-btn:hover {
+            background: #f8f9fa;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+        
+        .link-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+            margin-bottom: 20px;
+        }
+        
+        .link-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .link-card h4 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .link-card a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .link-card a:hover {
+            text-decoration: underline;
+        }
+        
+        .footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 60px;
+        }
+        
+        @media (max-width: 768px) {
+            .slideshow-header {
+                height: 350px;
+            }
+            
+            .slide-text h1 {
+                font-size: 2rem;
+            }
+            
+            .slide-text h2 {
+                font-size: 1.3rem;
+            }
+            
+            .slide-text p {
+                font-size: 1rem;
+            }
+            
+            .main-content {
+                padding: 20px;
+            }
+            
+            .social-btn {
+                display: block;
+                margin: 10px auto;
+                max-width: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="slideshow-header">
+        <div class="slide active">
+            <img src="images/slide1.png" alt="South Dakota Safety Days">
+        </div>
+        <div class="slide">
+            <img src="images/slide2.png" alt="South Dakota Safety Days">
+        </div>
+        <div class="slide">
+            <img src="images/slide3.jpg" alt="Police Officers">
+        </div>
+        <div class="slide">
+            <img src="images/slide4.jpg" alt="Emergency Medical Services">
+        </div>
+        <div class="slide">
+            <img src="images/slide5.jpg" alt="Firefighters">
+        </div>
+        <div class="slide">
+            <img src="images/slide6.jpg" alt="K-9 Unit">
+        </div>
+        <div class="slide">
+            <img src="images/slide7.jpg" alt="Firefighter in Action">
+        </div>
+        
+        <div class="slide-overlay">
+            <div class="slide-text">
+                <h1>South Dakota Safety Days</h1>
+                <h2>Aurora County</h2>
+                <p>October 2nd & 3rd, 2026</p>
+            </div>
+        </div>
+        
+        <div class="slideshow-dots">
+            <span class="dot active" onclick="goToSlide(0)"></span>
+            <span class="dot" onclick="goToSlide(1)"></span>
+            <span class="dot" onclick="goToSlide(2)"></span>
+            <span class="dot" onclick="goToSlide(3)"></span>
+            <span class="dot" onclick="goToSlide(4)"></span>
+            <span class="dot" onclick="goToSlide(5)"></span>
+            <span class="dot" onclick="goToSlide(6)"></span>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="main-content">
             <div class="section">
                 <h2>About Our Event</h2>
                 <p>South Dakota Safety Days is a community-focused event dedicated to promoting safety awareness and education across our region. It brings together first responders, families, and local organizations to emphasize the importance of preparedness, quick response, and community support during emergencies.
@@ -347,6 +688,96 @@ This inaugural community event is organized by TilTechDoUsPart LLC to honor that
  Proceeds from the 2026 event will support Aurora County's fire, police, and EMS departments, helping ensure they have the resources, equipment, and training needed to protect and serve our communities.
 While focused on Aurora County, we welcome participation from towns and counties across South Dakota to stand united in promoting safety and honoring those who keep us safe every day. Join us in celebrating Aurora County's leadership and launching what we hope will become South Dakota's premier first responder appreciation initiative.
 </div>
+
+            <div class="event-details">
+                <h3>Event Details</h3>
+                <div class="detail-item">
+                    <strong>Date:</strong> October 2nd & 3rd 2026
+                </div>
+                <div class="detail-item">
+                    <strong>Time:</strong> Friday 4pm-7pm ; Saturday 12pm-7pm
+                </div>
+                <div class="detail-item">
+                    <strong>Location:</strong>  Plankinton, South Dakota<br><strong>Venues:</strong> Aurora County Ag Building & Plankinton School<br><em>Please check back closer to the event date for confirmed venue details and any updates.</em>
+                </div>
+                <div class="detail-item">
+                    <strong>Contact:</strong> SouthDakotaSafetyDays@gmail.com
+                </div>
+            </div>
+
+            <div class="social-links">
+                <h3>Follow Us on Social Media</h3>
+                <a href="https://www.facebook.com/profile.php?id=61577199266169" class="social-btn facebook">Facebook</a>
+                <a href="https://www.instagram.com/southdakotasafetydays/" class="social-btn instagram">Instagram</a>
+                <a href="https://southdakotasafetydays.printify.me/" class="social-btn" style="background: #39b54a;">Shop Merch</a>
+            </div>
+
+            <div class="donation-section">
+                <h2>Support Our Cause</h2>
+                <p>Help us promote safety awareness across South Dakota. Your donation makes a difference in keeping our communities safe.</p>
+                <a href="#" class="donation-btn">Make a Donation</a>
+                <a href="#" class="donation-btn">Learn More</a>
+            </div>
+
+            <div class="section">
+                <div class="link-card">
+                    <h4>Safety Resources</h4>
+                    <p>Access important safety information and guidelines</p>
+                    <a href="safety-resources.html">View Resources</a>
+                </div>
+                <div class="link-card">
+                    <h4>Event Schedule</h4>
+                    <p>Check out our full schedule of safety events</p>
+                    <a href="#">View Schedule</a>
+                </div>
+                <div class="link-card">
+                    <h4>Volunteer</h4>
+                    <p>Join our team of safety advocates</p>
+                    <a href="volunteer.html">Get Involved</a>
+                </div>
+                <div class="link-card">
+                    <h4>Contact Us</h4>
+                    <p>Get in touch with our team</p>
+                    <a href="#">Contact Info</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="container">
+            <p>&copy; 2025 South Dakota Safety Days. All rights reserved.</p>
+            <p>Promoting safety awareness across South Dakota communities</p>
+        </div>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.dot');
+        const totalSlides = slides.length;
+        
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            slides[index].classList.add('active');
+            dots[index].classList.add('active');
+        }
+        
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            showSlide(currentSlide);
+        }
+        
+        function goToSlide(index) {
+            currentSlide = index;
+            showSlide(currentSlide);
+        }
+        
+        setInterval(nextSlide, 5000);
+    </script>
+</body>
+</html>
 
             <div class="event-details">
                 <h3>Event Details</h3>
