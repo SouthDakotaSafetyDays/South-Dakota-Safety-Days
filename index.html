@@ -24,19 +24,23 @@
             padding: 0 20px;
         }
         
-        /* Logo Header Styles */
-        .top-header {
-            background: white;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            padding: 10px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
+        /* Floating Logo on Slideshow */
+        .floating-logo {
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            z-index: 50;
         }
         
-        .logo img {
-            height: 80px;
+        .floating-logo img {
+            height: 100px;
             width: auto;
+            filter: drop-shadow(0 4px 10px rgba(0,0,0,0.5));
+            transition: transform 0.3s ease;
+        }
+        
+        .floating-logo img:hover {
+            transform: scale(1.05);
         }
         
         .slideshow-header {
@@ -285,8 +289,13 @@
         }
         
         @media (max-width: 768px) {
-            .logo img {
-                height: 60px;
+            .floating-logo {
+                top: 10px;
+                left: 15px;
+            }
+            
+            .floating-logo img {
+                height: 70px;
             }
             
             .slideshow-header {
@@ -318,16 +327,12 @@
     </style>
 </head>
 <body>
-    <!-- Logo Header -->
-    <header class="top-header">
-        <div class="container">
-            <a href="index.html" class="logo">
-                <img src="images/LOGO.png" alt="South Dakota Safety Days Logo">
-            </a>
-        </div>
-    </header>
-
     <div class="slideshow-header">
+        <!-- Floating Logo -->
+        <a href="index.html" class="floating-logo">
+            <img src="images/LOGO.png" alt="South Dakota Safety Days Logo">
+        </a>
+        
         <div class="slide active">
             <img src="images/slide1.png" alt="South Dakota Safety Days">
         </div>
