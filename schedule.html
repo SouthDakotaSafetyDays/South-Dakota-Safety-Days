@@ -13,410 +13,297 @@
 <meta property="og:image" content="https://southdakotasafetydays.com/images/flyer-promo.png">
 <meta name="twitter:card" content="summary_large_image">
 <style>
-  * { margin:0; padding:0; box-sizing:border-box; }
-
-  :root{
-    --navy:#0d1b3e;
-    --navy-mid:#1a2f5e;
-    --gold:#c9a84c;
-    --gold-light:#f5d77e;
-    --gold-dark:#8a6d21;
-    --page:#f4f4f4;
-    --card:#ffffff;
-    --ink:#333333;
-    --ink-soft:#5a6472;
-    --line:#e4e6ea;
-    --crimson:#8f1d21;
-    --crimson-light:#a8262b;
-  }
-
-  body{
-    font-family:'Arial', Helvetica, sans-serif;
-    line-height:1.6;
-    color:var(--ink);
-    background:var(--page);
-    -webkit-font-smoothing:antialiased;
-  }
-
-  .wrap{ max-width:1100px; margin:0 auto; padding:0 22px; }
-
-  /* ---------- NAV ---------- */
-  .site-nav{
-    background:var(--navy);
-    border-bottom:4px solid var(--gold);
-    position:sticky; top:0; z-index:100;
-    box-shadow:0 2px 10px rgba(0,0,0,0.25);
-  }
-  .site-nav .wrap{
-    display:flex; align-items:center; justify-content:space-between;
-    flex-wrap:wrap; gap:12px; padding-top:14px; padding-bottom:14px;
-  }
-  .nav-brand{ display:flex; align-items:center; gap:12px; text-decoration:none; }
-  .nav-brand img{ height:44px; width:auto; }
-  .nav-brand span{
-    color:#ffffff; font-weight:bold; font-size:0.95rem;
-    letter-spacing:0.4px; line-height:1.2;
-  }
-  .nav-brand small{ display:block; color:var(--gold); font-size:0.7rem; font-weight:normal; letter-spacing:1px; text-transform:uppercase; }
-  .nav-links{ display:flex; flex-wrap:wrap; gap:4px; }
-  .nav-links a{
-    color:#c8d8f0; text-decoration:none; font-size:0.72rem;
-    letter-spacing:1px; text-transform:uppercase; font-weight:bold;
-    padding:8px 12px; border-radius:3px; transition:all 0.2s ease;
-  }
-  .nav-links a:hover, .nav-links a:focus{ color:var(--navy); background:var(--gold-light); }
-  .nav-links a.current{ color:var(--gold-light); border-bottom:2px solid var(--gold); border-radius:0; }
-
-  /* ---------- HERO ---------- */
-  .page-hero{
-    background:linear-gradient(160deg, var(--navy) 0%, var(--navy-mid) 55%, var(--navy) 100%);
-    padding:64px 0 56px; text-align:center;
-  }
-  .eyebrow{
-    display:inline-block; background:var(--gold); color:var(--navy);
-    font-size:0.7rem; font-weight:bold; letter-spacing:2.5px; text-transform:uppercase;
-    padding:7px 20px; border-radius:3px; margin-bottom:22px;
-  }
-  .page-hero h1{
-    font-size:3rem; font-weight:900; letter-spacing:1px; line-height:1.05;
-    color:#ffffff; text-transform:uppercase; margin-bottom:8px;
-  }
-  .page-hero h1 em{ display:block; font-style:normal; color:var(--gold-light); }
-  .page-hero .dates{
-    color:var(--gold-light); font-size:1.2rem; font-weight:bold;
-    letter-spacing:1.5px; margin-top:16px;
-  }
-  .page-hero .place{ color:#c8d8f0; font-size:1rem; margin-top:6px; }
-  .star-rule{ color:var(--gold); letter-spacing:8px; font-size:0.8rem; margin:24px 0 0; opacity:0.85; }
-
-  .gold-bar{ height:4px; background:var(--gold); }
-
-  /* ---------- DAY BLOCKS ---------- */
-  .day{ padding:56px 0 8px; }
-  .day-head{ border-left:5px solid var(--gold); padding-left:20px; margin-bottom:30px; }
-  .day-head h2{
-    font-size:2.1rem; font-weight:900; text-transform:uppercase;
-    letter-spacing:0.5px; color:var(--navy); line-height:1.1;
-  }
-  .day-head h2 span{ color:var(--gold-dark); }
-  .day-head p{ color:var(--ink-soft); font-size:0.95rem; margin-top:6px; }
-
-  .event-card{
-    background:var(--card);
-    border:1px solid var(--line);
-    border-top:4px solid var(--navy);
-    border-radius:8px; padding:32px 30px; margin-bottom:24px;
-    box-shadow:0 3px 14px rgba(0,0,0,0.07);
-  }
-  .event-card h3{
-    color:var(--navy); font-size:1.4rem; font-weight:900; text-transform:uppercase;
-    letter-spacing:0.5px; margin-bottom:4px; line-height:1.2;
-  }
-  .event-card .headline-time{
-    color:var(--gold-dark); font-size:1.1rem; font-weight:bold; margin-bottom:20px;
-  }
-  .facts{ list-style:none; margin-bottom:20px; }
-  .facts li{
-    display:flex; gap:14px; padding:10px 0;
-    border-bottom:1px solid var(--line); font-size:0.97rem;
-  }
-  .facts li:last-child{ border-bottom:none; }
-  .facts .label{
-    flex:0 0 118px; color:var(--gold-dark); font-size:0.72rem; font-weight:bold;
-    letter-spacing:1.5px; text-transform:uppercase; padding-top:4px;
-  }
-  .facts .value{ flex:1; color:var(--ink); }
-  .facts .value small{ display:block; color:var(--ink-soft); font-size:0.86rem; margin-top:3px; }
-
-  .note{
-    background:#fbf7ea; border-left:4px solid var(--gold);
-    padding:16px 20px; border-radius:0 6px 6px 0; margin-bottom:22px;
-  }
-  .note strong{ color:var(--navy); }
-  .note p{ color:#5a4f2e; font-size:0.92rem; }
-  .note ul{ margin:8px 0 0 20px; color:#5a4f2e; font-size:0.92rem; }
-  .note ul li{ margin-bottom:4px; }
-
-  .btn{
-    display:inline-block; padding:13px 30px;
-    background:var(--gold); color:var(--navy);
-    text-decoration:none; border-radius:3px;
-    font-weight:bold; font-size:0.85rem; letter-spacing:1px;
-    text-transform:uppercase; transition:background 0.2s ease;
-  }
-  .btn:hover, .btn:focus{ background:var(--gold-light); }
-  .btn.ghost{
-    background:transparent; border:2px solid var(--navy); color:var(--navy);
-  }
-  .btn.ghost:hover, .btn.ghost:focus{ background:var(--navy); color:#ffffff; }
-
-  /* ---------- INLINE FLYER ---------- */
-  .flyer-block{
-    margin-top:28px; padding-top:26px;
-    border-top:1px solid var(--line);
-    text-align:center;
-  }
-  .flyer-block .flyer-label{
-    color:var(--gold-dark); font-size:0.7rem; font-weight:bold;
-    letter-spacing:2.5px; text-transform:uppercase; margin-bottom:16px;
-  }
-  .flyer-block img{
-    width:100%; max-width:560px; height:auto; display:block;
-    margin:0 auto; border-radius:6px;
-    border:1px solid var(--line);
-    box-shadow:0 6px 22px rgba(0,0,0,0.16);
-  }
-  .flyer-block.wide img{ max-width:860px; }
-  .flyer-block .print-link{
-    display:inline-block; margin-top:16px; color:var(--navy);
-    font-size:0.78rem; font-weight:bold; letter-spacing:1px;
-    text-transform:uppercase; text-decoration:none;
-    border-bottom:2px solid var(--gold); padding-bottom:2px;
-  }
-  .flyer-block .print-link:hover, .flyer-block .print-link:focus{ color:var(--gold-dark); border-color:var(--navy); }
-
-  /* ---------- RUN OF SHOW ---------- */
-  .runsheet{ list-style:none; margin-top:6px; }
-  .runsheet li{
-    display:flex; gap:18px; padding:8px 0;
-    border-bottom:1px dashed var(--line); font-size:0.94rem;
-  }
-  .runsheet li:last-child{ border-bottom:none; }
-  .runsheet .t{ flex:0 0 84px; color:var(--gold-dark); font-weight:bold; font-size:0.88rem; }
-  .runsheet .d{ flex:1; color:var(--ink); }
-
-  /* ---------- SATURDAY GRID ---------- */
-  .allday-banner{
-    text-align:center; color:var(--gold-dark); font-size:0.76rem; font-weight:bold;
-    letter-spacing:3px; text-transform:uppercase; margin:36px 0 20px;
-  }
-  .allday-grid{ display:grid; grid-template-columns:repeat(4, 1fr); gap:18px; }
-  .allday-card{
-    background:var(--card); border:1px solid var(--line);
-    border-radius:8px; padding:24px 20px;
-    box-shadow:0 2px 10px rgba(0,0,0,0.05);
-  }
-  .allday-card h4{
-    color:var(--navy); font-size:0.92rem; font-weight:900; text-transform:uppercase;
-    letter-spacing:0.5px; margin-bottom:14px; line-height:1.25;
-    padding-bottom:10px; border-bottom:2px solid var(--gold);
-  }
-  .allday-card ul{ list-style:none; }
-  .allday-card ul li{
-    color:var(--ink); font-size:0.88rem; padding-left:14px;
-    position:relative; margin-bottom:9px; line-height:1.45;
-  }
-  .allday-card ul li::before{ content:"•"; position:absolute; left:0; color:var(--gold-dark); font-weight:bold; }
-  .comeandgo{
-    text-align:center; color:var(--ink-soft); font-style:italic;
-    font-size:0.92rem; margin-top:22px;
-  }
-
-  .ceremony{
-    background:linear-gradient(135deg, var(--crimson), var(--crimson-light));
-    border-radius:8px; padding:36px 32px; margin-top:32px;
-    box-shadow:0 4px 18px rgba(143,29,33,0.28);
-  }
-  .ceremony .time-badge{
-    display:inline-block; background:var(--gold-light); color:var(--navy);
-    font-weight:bold; font-size:0.9rem; letter-spacing:1px;
-    padding:6px 16px; border-radius:3px; margin-bottom:14px;
-  }
-  .ceremony h3{
-    color:#ffffff; font-size:1.55rem; font-weight:900; text-transform:uppercase;
-    letter-spacing:0.5px; margin-bottom:16px; line-height:1.15;
-  }
-  .ceremony ul{ list-style:none; }
-  .ceremony ul li{
-    color:#f7e9e9; font-size:0.96rem; padding-left:22px;
-    position:relative; margin-bottom:11px; line-height:1.55;
-  }
-  .ceremony ul li::before{ content:"★"; position:absolute; left:0; color:var(--gold-light); }
-
-  /* ---------- CTA STRIP ---------- */
-  .cta-strip{
-    background:var(--navy);
-    border-top:4px solid var(--gold);
-    text-align:center; padding:52px 22px; margin-top:64px;
-  }
-  .cta-strip h2{ color:#ffffff; font-size:1.7rem; font-weight:900; text-transform:uppercase; letter-spacing:0.5px; }
-  .cta-strip p{ color:#c8d8f0; margin:14px auto 26px; max-width:620px; font-size:1rem; }
-  .cta-strip .btn{ margin:6px 8px; }
-  .cta-strip .btn.ghost{ border-color:rgba(255,255,255,0.7); color:#ffffff; }
-  .cta-strip .btn.ghost:hover, .cta-strip .btn.ghost:focus{ background:#ffffff; color:var(--navy); }
-
-  /* ---------- FOOTER ---------- */
-  .site-footer{ background:#060e1e; text-align:center; padding:44px 22px 34px; }
-  .site-footer img{ height:60px; width:auto; margin-bottom:16px; }
-  .site-footer .name{ color:var(--gold-light); font-weight:bold; letter-spacing:1px; }
-  .site-footer .org{ color:#4a5a7a; font-size:0.88rem; margin-top:5px; }
-  .footer-links{ margin:22px 0 18px; }
-  .footer-links a{
-    color:#7a95bb; text-decoration:none; font-size:0.83rem;
-    letter-spacing:0.5px; margin:0 11px; line-height:2.2;
-  }
-  .footer-links a:hover, .footer-links a:focus{ color:var(--gold); }
-  .site-footer .fine{
-    color:#4a5a7a; font-size:0.77rem; line-height:1.7;
-    max-width:760px; margin:0 auto; padding-top:18px;
-    border-top:1px solid rgba(255,255,255,0.08);
-  }
-
-  :focus-visible{ outline:3px solid var(--gold-dark); outline-offset:3px; }
-
-  @media (prefers-reduced-motion: reduce){
-    *{ transition:none !important; }
-  }
-
-  @media (max-width: 900px){
-    .allday-grid{ grid-template-columns:repeat(2, 1fr); }
-  }
-
-  @media (max-width: 640px){
-    .page-hero{ padding:44px 0 40px; }
-    .page-hero h1{ font-size:2rem; }
-    .day-head h2{ font-size:1.55rem; }
-    .event-card{ padding:24px 20px; }
-    .facts li{ flex-direction:column; gap:2px; }
-    .facts .label{ flex:none; padding-top:0; }
-    .runsheet li{ gap:12px; }
-    .runsheet .t{ flex:0 0 70px; font-size:0.84rem; }
-    .allday-grid{ grid-template-columns:1fr; }
-    .ceremony{ padding:26px 22px; }
-    .ceremony h3{ font-size:1.2rem; }
-    .nav-brand span{ font-size:0.85rem; }
-    .nav-links a{ font-size:0.66rem; padding:7px 8px; }
-    .btn{ display:block; margin:8px 0; text-align:center; }
-  }
+* { margin:0; padding:0; box-sizing:border-box; }
+:root{
+  --navy:#0d1b3e; --navy-mid:#1a2f5e;
+  --gold:#c9a84c; --gold-light:#f5d77e; --gold-dark:#8a6d21;
+  --page:#f4f4f4; --card:#ffffff;
+  --ink:#333333; --ink-soft:#5a6472; --line:#e4e6ea;
+  --crimson:#8f1d21; --crimson-light:#a8262b;
+}
+body{ font-family:Arial, Helvetica, sans-serif; line-height:1.6; color:var(--ink); background:var(--page); }
+.wrap{ max-width:1100px; margin:0 auto; padding:0 22px; }
+.site-nav{ background:var(--navy); border-bottom:4px solid var(--gold); position:sticky; top:0; z-index:100; box-shadow:0 2px 10px rgba(0,0,0,0.25); }
+.site-nav .wrap{ display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; padding-top:14px; padding-bottom:14px; }
+.nav-brand{ display:flex; align-items:center; gap:12px; text-decoration:none; }
+.nav-brand img{ height:44px; width:auto; }
+.nav-brand span{ color:#ffffff; font-weight:bold; font-size:0.95rem; line-height:1.2; }
+.nav-brand small{ display:block; color:var(--gold); font-size:0.7rem; font-weight:normal; letter-spacing:1px; text-transform:uppercase; }
+.nav-links{ display:flex; flex-wrap:wrap; gap:4px; }
+.nav-links a{ color:#c8d8f0; text-decoration:none; font-size:0.72rem; letter-spacing:1px; text-transform:uppercase; font-weight:bold; padding:8px 12px; border-radius:3px; transition:all 0.2s ease; }
+.nav-links a:hover, .nav-links a:focus{ color:var(--navy); background:var(--gold-light); }
+.nav-links a.current{ color:var(--gold-light); border-bottom:2px solid var(--gold); border-radius:0; }
+.page-hero{ background:linear-gradient(160deg, var(--navy) 0%, var(--navy-mid) 55%, var(--navy) 100%); padding:64px 0 56px; text-align:center; }
+.eyebrow{ display:inline-block; background:var(--gold); color:var(--navy); font-size:0.7rem; font-weight:bold; letter-spacing:2.5px; text-transform:uppercase; padding:7px 20px; border-radius:3px; margin-bottom:22px; }
+.page-hero h1{ font-size:3rem; font-weight:900; letter-spacing:1px; line-height:1.05; color:#ffffff; text-transform:uppercase; margin-bottom:8px; }
+.page-hero h1 em{ display:block; font-style:normal; color:var(--gold-light); }
+.page-hero .dates{ color:var(--gold-light); font-size:1.2rem; font-weight:bold; letter-spacing:1.5px; margin-top:16px; }
+.page-hero .place{ color:#c8d8f0; font-size:1rem; margin-top:6px; }
+.star-rule{ color:var(--gold); letter-spacing:8px; font-size:0.8rem; margin:24px 0 0; }
+.gold-bar{ height:4px; background:var(--gold); }
+.day{ padding:56px 0 8px; }
+.day-head{ border-left:5px solid var(--gold); padding-left:20px; margin-bottom:30px; }
+.day-head h2{ font-size:2.1rem; font-weight:900; text-transform:uppercase; color:var(--navy); line-height:1.1; }
+.day-head h2 span{ color:var(--gold-dark); }
+.day-head p{ color:var(--ink-soft); font-size:0.95rem; margin-top:6px; }
+.event-card{ background:var(--card); border:1px solid var(--line); border-top:4px solid var(--navy); border-radius:8px; padding:32px 30px; margin-bottom:24px; box-shadow:0 3px 14px rgba(0,0,0,0.07); }
+.event-card h3{ color:var(--navy); font-size:1.4rem; font-weight:900; text-transform:uppercase; margin-bottom:4px; line-height:1.2; }
+.event-card .headline-time{ color:var(--gold-dark); font-size:1.1rem; font-weight:bold; margin-bottom:20px; }
+.facts{ list-style:none; margin-bottom:20px; }
+.facts li{ display:flex; gap:14px; padding:10px 0; border-bottom:1px solid var(--line); font-size:0.97rem; }
+.facts li:last-child{ border-bottom:none; }
+.facts .label{ flex:0 0 118px; color:var(--gold-dark); font-size:0.72rem; font-weight:bold; letter-spacing:1.5px; text-transform:uppercase; padding-top:4px; }
+.facts .value{ flex:1; color:var(--ink); }
+.facts .value small{ display:block; color:var(--ink-soft); font-size:0.86rem; margin-top:3px; }
+.note{ background:#fbf7ea; border-left:4px solid var(--gold); padding:16px 20px; border-radius:0 6px 6px 0; margin-bottom:22px; }
+.note strong{ color:var(--navy); }
+.note p{ color:#5a4f2e; font-size:0.92rem; }
+.note ul{ margin:8px 0 0 20px; color:#5a4f2e; font-size:0.92rem; }
+.note ul li{ margin-bottom:4px; }
+.btn{ display:inline-block; padding:13px 30px; background:var(--gold); color:var(--navy); text-decoration:none; border-radius:3px; font-weight:bold; font-size:0.85rem; letter-spacing:1px; text-transform:uppercase; transition:background 0.2s ease; }
+.btn:hover, .btn:focus{ background:var(--gold-light); }
+.btn.ghost{ background:transparent; border:2px solid var(--navy); color:var(--navy); }
+.btn.ghost:hover, .btn.ghost:focus{ background:var(--navy); color:#ffffff; }
+.flyer-block{ margin-top:28px; padding-top:26px; border-top:1px solid var(--line); text-align:center; }
+.flyer-block .flyer-label{ color:var(--gold-dark); font-size:0.7rem; font-weight:bold; letter-spacing:2.5px; text-transform:uppercase; margin-bottom:16px; }
+.flyer-block img{ width:100%; max-width:560px; height:auto; display:block; margin:0 auto; border-radius:6px; border:1px solid var(--line); box-shadow:0 6px 22px rgba(0,0,0,0.16); }
+.flyer-block.wide img{ max-width:860px; }
+.flyer-block .print-link{ display:inline-block; margin-top:16px; color:var(--navy); font-size:0.78rem; font-weight:bold; letter-spacing:1px; text-transform:uppercase; text-decoration:none; border-bottom:2px solid var(--gold); padding-bottom:2px; }
+.flyer-block .print-link:hover, .flyer-block .print-link:focus{ color:var(--gold-dark); border-color:var(--navy); }
+.runsheet{ list-style:none; margin-top:6px; }
+.runsheet li{ display:flex; gap:18px; padding:8px 0; border-bottom:1px dashed var(--line); font-size:0.94rem; }
+.runsheet li:last-child{ border-bottom:none; }
+.runsheet .t{ flex:0 0 84px; color:var(--gold-dark); font-weight:bold; font-size:0.88rem; }
+.runsheet .d{ flex:1; color:var(--ink); }
+.allday-banner{ text-align:center; color:var(--gold-dark); font-size:0.76rem; font-weight:bold; letter-spacing:3px; text-transform:uppercase; margin:36px 0 20px; }
+.allday-grid{ display:grid; grid-template-columns:repeat(4, 1fr); gap:18px; }
+.allday-card{ background:var(--card); border:1px solid var(--line); border-radius:8px; padding:24px 20px; box-shadow:0 2px 10px rgba(0,0,0,0.05); }
+.allday-card h4{ color:var(--navy); font-size:0.92rem; font-weight:900; text-transform:uppercase; margin-bottom:14px; line-height:1.25; padding-bottom:10px; border-bottom:2px solid var(--gold); }
+.allday-card ul{ list-style:none; }
+.allday-card ul li{ color:var(--ink); font-size:0.88rem; padding-left:14px; position:relative; margin-bottom:9px; line-height:1.45; }
+.allday-card ul li::before{ content:"\2022"; position:absolute; left:0; color:var(--gold-dark); font-weight:bold; }
+.comeandgo{ text-align:center; color:var(--ink-soft); font-style:italic; font-size:0.92rem; margin-top:22px; }
+.ceremony{ background:linear-gradient(135deg, var(--crimson), var(--crimson-light)); border-radius:8px; padding:36px 32px; margin-top:32px; box-shadow:0 4px 18px rgba(143,29,33,0.28); }
+.ceremony .time-badge{ display:inline-block; background:var(--gold-light); color:var(--navy); font-weight:bold; font-size:0.9rem; letter-spacing:1px; padding:6px 16px; border-radius:3px; margin-bottom:14px; }
+.ceremony h3{ color:#ffffff; font-size:1.55rem; font-weight:900; text-transform:uppercase; margin-bottom:16px; line-height:1.15; }
+.ceremony ul{ list-style:none; }
+.ceremony ul li{ color:#f7e9e9; font-size:0.96rem; padding-left:22px; position:relative; margin-bottom:11px; line-height:1.55; }
+.ceremony ul li::before{ content:"\2605"; position:absolute; left:0; color:var(--gold-light); }
+.cta-strip{ background:var(--navy); border-top:4px solid var(--gold); text-align:center; padding:52px 22px; margin-top:64px; }
+.cta-strip h2{ color:#ffffff; font-size:1.7rem; font-weight:900; text-transform:uppercase; }
+.cta-strip p{ color:#c8d8f0; margin:14px auto 26px; max-width:620px; font-size:1rem; }
+.cta-strip .btn{ margin:6px 8px; }
+.cta-strip .btn.ghost{ border-color:rgba(255,255,255,0.7); color:#ffffff; }
+.cta-strip .btn.ghost:hover, .cta-strip .btn.ghost:focus{ background:#ffffff; color:var(--navy); }
+.site-footer{ background:#060e1e; text-align:center; padding:44px 22px 34px; }
+.site-footer img{ height:60px; width:auto; margin-bottom:16px; }
+.site-footer .name{ color:var(--gold-light); font-weight:bold; letter-spacing:1px; }
+.site-footer .org{ color:#4a5a7a; font-size:0.88rem; margin-top:5px; }
+.footer-links{ margin:22px 0 18px; }
+.footer-links a{ color:#7a95bb; text-decoration:none; font-size:0.83rem; margin:0 11px; line-height:2.2; }
+.footer-links a:hover, .footer-links a:focus{ color:var(--gold); }
+.site-footer .fine{ color:#4a5a7a; font-size:0.77rem; line-height:1.7; max-width:760px; margin:0 auto; padding-top:18px; border-top:1px solid rgba(255,255,255,0.08); }
+:focus-visible{ outline:3px solid var(--gold-dark); outline-offset:3px; }
+@media (max-width: 900px){ .allday-grid{ grid-template-columns:repeat(2, 1fr); } }
+@media (max-width: 640px){
+  .page-hero{ padding:44px 0 40px; }
+  .page-hero h1{ font-size:2rem; }
+  .day-head h2{ font-size:1.55rem; }
+  .event-card{ padding:24px 20px; }
+  .facts li{ flex-direction:column; gap:2px; }
+  .facts .label{ flex:none; padding-top:0; }
+  .runsheet li{ gap:12px; }
+  .runsheet .t{ flex:0 0 70px; font-size:0.84rem; }
+  .allday-grid{ grid-template-columns:1fr; }
+  .ceremony{ padding:26px 22px; }
+  .ceremony h3{ font-size:1.2rem; }
+  .nav-brand span{ font-size:0.85rem; }
+  .nav-links a{ font-size:0.66rem; padding:7px 8px; }
+  .btn{ display:block; margin:8px 0; text-align:center; }
+}
 </style>
 </head>
 <body>
-
-<!-- ===== NAV ===== -->
 <nav class="site-nav">
-  <div class="wrap">
-    <a class="nav-brand" href="index.html">
-      <img src="images/LOGO.png" alt="South Dakota Safety Days logo">
-      <span>South Dakota Safety Days
-        <small>Aurora County · Plankinton, SD</small>
-      </span>
-    </a>
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="schedule.html" class="current">Schedule</a>
-      <a href="index.html#support">Support</a>
-      <a href="volunteer.html">Volunteer</a>
-      <a href="safety-resources.html">Resources</a>
-      <a href="mailto:SouthDakotaSafetyDays@gmail.com">Contact</a>
-    </div>
-  </div>
+<div class="wrap">
+<a class="nav-brand" href="index.html">
+<img src="images/LOGO.png" alt="South Dakota Safety Days logo">
+<span>South Dakota Safety Days<small>Aurora County &middot; Plankinton, SD</small></span>
+</a>
+<div class="nav-links">
+<a href="index.html">Home</a>
+<a href="schedule.html" class="current">Schedule</a>
+<a href="index.html#support">Support</a>
+<a href="volunteer.html">Volunteer</a>
+<a href="safety-resources.html">Resources</a>
+<a href="mailto:SouthDakotaSafetyDays@gmail.com">Contact</a>
+</div>
+</div>
 </nav>
-
-<!-- ===== HERO ===== -->
 <header class="page-hero">
-  <div class="wrap">
-    <span class="eyebrow">October — First Responders Appreciation Month</span>
-    <h1>Event <em>Schedule</em></h1>
-    <p class="dates">October 9 &amp; 10, 2026</p>
-    <p class="place">Plankinton, South Dakota</p>
-    <p class="star-rule">★ ★ ★ ★ ★ ★ ★</p>
-  </div>
+<div class="wrap">
+<span class="eyebrow">October &mdash; First Responders Appreciation Month</span>
+<h1>Event <em>Schedule</em></h1>
+<p class="dates">October 9 &amp; 10, 2026</p>
+<p class="place">Plankinton, South Dakota</p>
+<p class="star-rule">&#9733; &#9733; &#9733; &#9733; &#9733; &#9733; &#9733;</p>
+</div>
 </header>
-
 <div class="gold-bar"></div>
-
-<!-- ===== FRIDAY ===== -->
 <section class="day">
-  <div class="wrap">
-    <div class="day-head">
-      <h2>Friday · <span>October 9</span></h2>
-      <p>Two evening programs. Both require registration.</p>
-    </div>
-
-    <!-- Self-Defense Class -->
-    <div class="event-card">
-      <h3>Self-Defense Class</h3>
-      <p class="headline-time">4:00 – 6:00 PM · $20 per person</p>
-      <ul class="facts">
-        <li><span class="label">Where</span><span class="value">Plankinton School Gym<small>404 Davenport Street, Plankinton, South Dakota</small></span></li>
-        <li><span class="label">Instructor</span><span class="value">Shihan David Sheets<small>SoDak Kyokushin Karate</small></span></li>
-        <li><span class="label">Who</span><span class="value">Open to everyone. No experience needed.</span></li>
-        <li><span class="label">You get</span><span class="value">Practical self-defense techniques, hands-on training practice, and a certificate of completion.</span></li>
-      </ul>
-      <div class="note">
-        <p><strong>Before you come:</strong></p>
-        <ul>
-          <li>A waiver is required for every participant.</li>
-          <li>Participants under 18 need a parent or guardian signature.</li>
-          <li>Not registered in advance? Arrive 30 minutes early.</li>
-        </ul>
-      </div>
-      <p><a class="btn" href="https://www.eventbrite.com/e/a-south-dakota-safety-days-self-defense-class-tickets-1997980672977" target="_blank" rel="noopener">Register on Eventbrite</a></p>
-
-      <div class="flyer-block">
-        <p class="flyer-label">Class Flyer</p>
-        <img src="images/flyer-selfdefense.png" alt="Safety Starts With You self-defense class flyer — Friday October 9, 2026, 4 to 6 PM at Plankinton School Gym, $20 per person">
-        <a class="print-link" href="images/flyer-selfdefense.png" target="_blank" rel="noopener">Open Full Size for Printing</a>
-      </div>
-    </div>
-
-    <!-- PTSD 9-1-1 -->
-    <div class="event-card">
-      <h3>PTSD 9-1-1 Film Screening &amp; Panel Discussion</h3>
-      <p class="headline-time">Doors 6:30 PM · Program 7:00 – 9:30 PM · Free</p>
-      <ul class="facts">
-        <li><span class="label">Where</span><span class="value">Silo Market<small>120 S Main St, Plankinton, South Dakota</small></span></li>
-        <li><span class="label">Who</span><span class="value">Ages 16 and older<small>Limited seating — registration required</small></span></li>
-        <li><span class="label">Evening</span><span class="value">
-          <ul class="runsheet">
-            <li><span class="t">6:30 PM</span><span class="d">Doors open</span></li>
-            <li><span class="t">7:00 PM</span><span class="d">Welcome &amp; introductions</span></li>
-            <li><span class="t">7:15 PM</span><span class="d">PTSD 9-1-1 documentary screening (84 min.)</span></li>
-            <li><span class="t">8:45 PM</span><span class="d">Live panel discussion</span></li>
-            <li><span class="t">9:30 PM</span><span class="d">Wrap-up &amp; closing</span></li>
-          </ul>
-        </span></li>
-      </ul>
-      <div class="note">
-        <p><strong>Viewer discretion advised.</strong> PTSD 9-1-1 is based on true events and some content may be distressing. The film is intended for educational and awareness purposes and does not provide medical or legal advice.</p>
-      </div>
-      <p>
-        <a class="btn" href="https://www.eventbrite.com/e/ptsd-9-1-1-film-screening-panel-discussion-tickets-1996831373391" target="_blank" rel="noopener">Reserve a Free Seat</a>
-        <a class="btn ghost" href="mailto:SouthDakotaSafetyDays@gmail.com?subject=PTSD%209-1-1%20Screening%20Question">Questions or Group Reservations</a>
-      </p>
-
-      <div class="flyer-block wide">
-        <p class="flyer-label">Screening Flyer</p>
-        <img src="images/flyer-ptsd911.png" alt="PTSD 9-1-1 film screening and panel discussion flyer — Friday October 9, 2026 at Silo Market, doors 6:30 PM, free, ages 16 and up">
-        <a class="print-link" href="images/flyer-ptsd911.png" target="_blank" rel="noopener">Open Full Size for Printing</a>
-      </div>
-    </div>
-  </div>
+<div class="wrap">
+<div class="day-head">
+<h2>Friday &middot; <span>October 9</span></h2>
+<p>Two evening programs. Both require registration.</p>
+</div>
+<div class="event-card">
+<h3>Self-Defense Class</h3>
+<p class="headline-time">4:00 &ndash; 6:00 PM &middot; $20 per person</p>
+<ul class="facts">
+<li><span class="label">Where</span><span class="value">Plankinton School Gym<small>404 Davenport Street, Plankinton, South Dakota</small></span></li>
+<li><span class="label">Instructor</span><span class="value">Shihan David Sheets<small>SoDak Kyokushin Karate</small></span></li>
+<li><span class="label">Who</span><span class="value">Open to everyone. No experience needed.</span></li>
+<li><span class="label">You get</span><span class="value">Practical self-defense techniques, hands-on training practice, and a certificate of completion.</span></li>
+</ul>
+<div class="note">
+<p><strong>Before you come:</strong></p>
+<ul>
+<li>A waiver is required for every participant.</li>
+<li>Participants under 18 need a parent or guardian signature.</li>
+<li>Not registered in advance? Arrive 30 minutes early.</li>
+</ul>
+</div>
+<p><a class="btn" href="https://www.eventbrite.com/e/a-south-dakota-safety-days-self-defense-class-tickets-1997980672977" target="_blank" rel="noopener">Register on Eventbrite</a></p>
+<div class="flyer-block">
+<p class="flyer-label">Class Flyer</p>
+<img src="images/flyer-selfdefense.png" alt="Self-defense class flyer for Friday October 9, 2026 at Plankinton School Gym">
+<a class="print-link" href="images/flyer-selfdefense.png" target="_blank" rel="noopener">Open Full Size for Printing</a>
+</div>
+</div>
+<div class="event-card">
+<h3>PTSD 9-1-1 Film Screening &amp; Panel Discussion</h3>
+<p class="headline-time">Doors 6:30 PM &middot; Program 7:00 &ndash; 9:30 PM &middot; Free</p>
+<ul class="facts">
+<li><span class="label">Where</span><span class="value">Silo Market<small>120 S Main St, Plankinton, South Dakota</small></span></li>
+<li><span class="label">Who</span><span class="value">Ages 16 and older<small>Limited seating &mdash; registration required</small></span></li>
+<li><span class="label">Evening</span><span class="value">
+<ul class="runsheet">
+<li><span class="t">6:30 PM</span><span class="d">Doors open</span></li>
+<li><span class="t">7:00 PM</span><span class="d">Welcome &amp; introductions</span></li>
+<li><span class="t">7:15 PM</span><span class="d">PTSD 9-1-1 documentary screening (84 min.)</span></li>
+<li><span class="t">8:45 PM</span><span class="d">Live panel discussion</span></li>
+<li><span class="t">9:30 PM</span><span class="d">Wrap-up &amp; closing</span></li>
+</ul>
+</span></li>
+</ul>
+<div class="note">
+<p><strong>Viewer discretion advised.</strong> PTSD 9-1-1 is based on true events and some content may be distressing. The film is intended for educational and awareness purposes and does not provide medical or legal advice.</p>
+</div>
+<p>
+<a class="btn" href="https://www.eventbrite.com/e/ptsd-9-1-1-film-screening-panel-discussion-tickets-1996831373391" target="_blank" rel="noopener">Reserve a Free Seat</a>
+<a class="btn ghost" href="mailto:SouthDakotaSafetyDays@gmail.com?subject=PTSD%209-1-1%20Screening%20Question">Questions or Group Reservations</a>
+</p>
+<div class="flyer-block wide">
+<p class="flyer-label">Screening Flyer</p>
+<img src="images/flyer-ptsd911.png" alt="PTSD 9-1-1 film screening flyer for Friday October 9, 2026 at Silo Market">
+<a class="print-link" href="images/flyer-ptsd911.png" target="_blank" rel="noopener">Open Full Size for Printing</a>
+</div>
+</div>
+</div>
 </section>
-
-<!-- ===== SATURDAY ===== -->
 <section class="day">
-  <div class="wrap">
-    <div class="day-head">
-      <h2>Saturday · <span>October 10</span></h2>
-      <p>Free and open to the public. No registration needed.</p>
-    </div>
-
-    <div class="event-card">
-      <h3>South Dakota Safety Days</h3>
-      <p class="headline-time">Doors open 11:00 AM · Event closes 5:00 PM</p>
-      <ul class="facts">
-        <li><span class="label">Where</span><span class="value">Aurora County Ag Building<small>Plankinton, South Dakota</small></span></li>
-        <li><span class="label">Cost</span><span class="value">Free and open to the public</span></li>
-        <li><span class="label">Why</span><span class="value">The first event of its kind in South Dakota — held because Aurora County made October First Responders Appreciation Month, and the state followed.</span></li>
-      </ul>
-    </div>
-
-    <p class="allday-banner">All Day · 11:00 AM – 5:00 PM</p>
-
-    <div class="allday-grid">
-      <div class="allday-card">
-        <h4>Meet the Crews and Their Rigs</h4>
-        <ul>
-          <li>Fire trucks, ambulances, and law enforcement vehicles</li>
-          <li>Avera Careflight mobile simulation</li>
+<div class="wrap">
+<div class="day-head">
+<h2>Saturday &middot; <span>October 10</span></h2>
+<p>Free and open to the public. No registration needed.</p>
+</div>
+<div class="event-card">
+<h3>South Dakota Safety Days</h3>
+<p class="headline-time">Doors open 11:00 AM &middot; Event closes 5:00 PM</p>
+<ul class="facts">
+<li><span class="label">Where</span><span class="value">Aurora County Ag Building<small>Plankinton, South Dakota</small></span></li>
+<li><span class="label">Cost</span><span class="value">Free and open to the public</span></li>
+<li><span class="label">Why</span><span class="value">The first event of its kind in South Dakota &mdash; held because Aurora County made October First Responders Appreciation Month, and the state followed.</span></li>
+</ul>
+</div>
+<p class="allday-banner">All Day &middot; 11:00 AM &ndash; 5:00 PM</p>
+<div class="allday-grid">
+<div class="allday-card">
+<h4>Meet the Crews and Their Rigs</h4>
+<ul>
+<li>Fire trucks, ambulances, and law enforcement vehicles</li>
+<li>Avera Careflight mobile simulation</li>
+<li>Firefighter games</li>
+</ul>
+</div>
+<div class="allday-card">
+<h4>Skills That Save Lives</h4>
+<ul>
+<li>Stop the Bleed training</li>
+<li>Fire extinguisher training</li>
+<li>How to become a firefighter, EMT, or law enforcement officer</li>
+</ul>
+</div>
+<div class="allday-card">
+<h4>For Kids</h4>
+<ul>
+<li>Art table and letters to first responders</li>
+<li>Complete any kids' activity by 4:00 PM to enter the prize drawing</li>
+</ul>
+</div>
+<div class="allday-card">
+<h4>Also On Site</h4>
+<ul>
+<li>Food trucks</li>
+<li>Vendor tables and displays</li>
+<li>Silent auction</li>
+<li>More activities to come</li>
+</ul>
+</div>
+</div>
+<p class="comeandgo">Come and go as you please &mdash; everything above runs continuously.</p>
+<div class="ceremony">
+<span class="time-badge">1:30 PM</span>
+<h3>Ceremony and First Responders Awards</h3>
+<ul>
+<li>National anthem, welcome, and remarks from invited guests and county, city, and state representatives.</li>
+<li>Recognition of the Aurora County proclamation that made October First Responders Appreciation Month, and of the statewide proclamation now carrying it to all 66 counties.</li>
+<li>Awards presented to Aurora County firefighters, EMS providers, and law enforcement officers.</li>
+</ul>
+</div>
+<div class="event-card" style="margin-top:32px;">
+<div class="flyer-block" style="margin-top:0; padding-top:0; border-top:none;">
+<p class="flyer-label">Full Event Flyer &middot; Both Days</p>
+<img src="images/flyer-promo.png" alt="South Dakota Safety Days full event flyer for October 9 and 10, 2026">
+<a class="print-link" href="images/flyer-promo.png" target="_blank" rel="noopener">Open Full Size for Printing</a>
+</div>
+</div>
+</div>
+</section>
+<div class="cta-strip">
+<h2>Be Part of the Weekend</h2>
+<p>Reserve a vendor table, sponsor the event, or lend a hand as a volunteer. Every bit of it goes toward honoring Aurora County's first responders.</p>
+<a class="btn" href="index.html#support">Support the Event</a>
+<a class="btn ghost" href="volunteer.html">Volunteer With Us</a>
+</div>
+<footer class="site-footer">
+<img src="images/LOGO.png" alt="South Dakota Safety Days logo">
+<p class="name">South Dakota Safety Days</p>
+<p class="org">Organized by TilTechDoUsPart LLC &middot; Plankinton, South Dakota</p>
+<div class="footer-links">
+<a href="index.html">Home</a>
+<a href="schedule.html">Schedule</a>
+<a href="safety-resources.html">Safety Resources</a>
+<a href="volunteer.html">Volunteer</a>
+<a href="mailto:SouthDakotaSafetyDays@gmail.com">Contact</a>
+<a href="https://www.facebook.com/profile.php?id=61577199266169" target="_blank" rel="noopener">Facebook</a>
+<a href="https://www.instagram.com/southdakotasafetydays/" target="_blank" rel="noopener">Instagram</a>
+</div>
+<p class="fine">
+&copy; 2026 South Dakota Safety Days. All rights reserved.<br>
+South Dakota Safety Days is organized by TilTechDoUsPart LLC, a for-profit limited liability company. All contributions, sponsorships, and event support are not charitable donations and are not tax deductible.<br>
+Schedule and activities are subject to change. Please check back for updates.
+</p>
+</footer>
+</body>
+</html>
