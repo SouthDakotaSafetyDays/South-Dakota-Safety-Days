@@ -672,6 +672,92 @@
         .sfb-ig { background: #e4405f; }
         .sfb-mc { background: #39b54a; }
 
+        /* ── CONTACT SECTION ── */
+        .contact-section {
+            background: #f0f2f5;
+            padding: 60px 0;
+            border-top: 4px solid #c9a84c;
+        }
+        .contact-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        .contact-head {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .contact-eyebrow {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #c9a84c;
+            margin-bottom: 10px;
+        }
+        .contact-head h2 {
+            color: #0d1b3e;
+            font-size: 2rem;
+            font-weight: 900;
+            margin-bottom: 10px;
+        }
+        .contact-head p {
+            color: #666;
+            font-size: 15px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+        .contact-card {
+            background: white;
+            border-left: 4px solid #c9a84c;
+            border-radius: 0 6px 6px 0;
+            padding: 28px 26px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+        }
+        .contact-card h3 {
+            color: #0d1b3e;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #e4e6ea;
+        }
+        .contact-line {
+            font-size: 14px;
+            color: #444;
+            line-height: 1.65;
+            margin-bottom: 14px;
+        }
+        .contact-line:last-child { margin-bottom: 0; }
+        .contact-line strong {
+            display: block;
+            color: #0d1b3e;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 2px;
+        }
+        .contact-line a {
+            color: #1a4a8a;
+            text-decoration: none;
+            font-weight: 700;
+            word-break: break-word;
+        }
+        .contact-line a:hover { text-decoration: underline; }
+        .contact-line em {
+            color: #777;
+            font-size: 13px;
+            font-style: italic;
+        }
+
         /* ── BOTTOM NAV CARDS ── */
         .bottom-nav {
             background: #f0f2f5;
@@ -796,6 +882,7 @@
             .mission-inner { grid-template-columns: 1fr; gap: 30px; }
             .support-cards { grid-template-columns: 1fr; }
             .support-cards-2 { grid-template-columns: 1fr; }
+            .contact-grid { grid-template-columns: 1fr; }
             .bottom-nav-inner { grid-template-columns: repeat(2, 1fr); }
             .stat-row-inner { grid-template-columns: 1fr; gap: 10px; }
         }
@@ -825,10 +912,10 @@
             <div class="nav-links">
                 <a href="index.html">Home</a>
                 <a href="schedule.html">Schedule</a>
-                <a href="#">Support</a>
+                <a href="#support">Support</a>
                 <a href="volunteer.html">Volunteer</a>
                 <a href="safety-resources.html">Resources</a>
-                <a href="#">Contact</a>
+                <a href="#contact">Contact</a>
             </div>
             <div class="nav-right">
                 <a href="https://www.facebook.com/profile.php?id=61577199266169" class="nav-social-icon" target="_blank" rel="noopener" aria-label="Facebook">
@@ -1075,6 +1162,70 @@
         </div>
     </section>
 
+    <!-- CONTACT SECTION -->
+    <section class="contact-section" id="contact">
+        <div class="contact-inner">
+            <div class="contact-head">
+                <div class="contact-eyebrow">Get In Touch</div>
+                <h2>Contact Us</h2>
+                <p>Questions about the event, vendor tables, sponsorships, or volunteering? We'd love to hear from you.</p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <h3>Reach Out</h3>
+                    <div class="contact-line">
+                        <strong>Email</strong>
+                        <a href="mailto:SouthDakotaSafetyDays@gmail.com">SouthDakotaSafetyDays@gmail.com</a>
+                    </div>
+                    <div class="contact-line">
+                        <strong>Facebook</strong>
+                        <a href="https://www.facebook.com/profile.php?id=61577199266169" target="_blank" rel="noopener">South Dakota Safety Days</a>
+                    </div>
+                    <div class="contact-line">
+                        <strong>Instagram</strong>
+                        <a href="https://www.instagram.com/southdakotasafetydays/" target="_blank" rel="noopener">@southdakotasafetydays</a>
+                    </div>
+                </div>
+
+                <div class="contact-card">
+                    <h3>Event Venues</h3>
+                    <div class="contact-line">
+                        <strong>Saturday · Main Event</strong>
+                        Aurora County Ag Building<br>Plankinton, South Dakota 57368
+                    </div>
+                    <div class="contact-line">
+                        <strong>Friday · Self-Defense Class</strong>
+                        Plankinton School Gym<br>404 Davenport Street<br>Plankinton, South Dakota 57368
+                    </div>
+                    <div class="contact-line">
+                        <strong>Friday · Film Screening</strong>
+                        Silo Market<br>120 S Main St<br>Plankinton, South Dakota 57368
+                    </div>
+                </div>
+
+                <div class="contact-card">
+                    <h3>Event &amp; Organizer</h3>
+                    <div class="contact-line">
+                        <strong>Dates</strong>
+                        October 9 &amp; 10, 2026
+                    </div>
+                    <div class="contact-line">
+                        <strong>Hours</strong>
+                        Friday 4pm–7pm<br>Saturday 11am–5pm
+                    </div>
+                    <div class="contact-line">
+                        <strong>Organized By</strong>
+                        TilTechDoUsPart LLC<br>Plankinton, South Dakota
+                    </div>
+                    <div class="contact-line">
+                        <em>Please check back closer to the event date for confirmed venue details and any updates.</em>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- BOTTOM NAV CARDS -->
     <div class="bottom-nav">
         <div class="bottom-nav-inner">
@@ -1121,9 +1272,10 @@
                     </div>
                 </div>
                 <div class="footer-links">
+                    <a href="schedule.html">Schedule</a>
                     <a href="safety-resources.html">Safety Resources</a>
                     <a href="volunteer.html">Volunteer</a>
-                    <a href="mailto:SouthDakotaSafetyDays@gmail.com">Contact</a>
+                    <a href="#contact">Contact</a>
                     <a href="https://www.facebook.com/profile.php?id=61577199266169" target="_blank" rel="noopener">Facebook</a>
                     <a href="https://www.instagram.com/southdakotasafetydays/" target="_blank" rel="noopener">Instagram</a>
                 </div>
