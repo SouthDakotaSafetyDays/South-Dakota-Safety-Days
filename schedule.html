@@ -16,52 +16,53 @@
   * { margin:0; padding:0; box-sizing:border-box; }
 
   :root{
-    --navy-deep:#0a1530;
     --navy:#0d1b3e;
     --navy-mid:#1a2f5e;
     --gold:#c9a84c;
     --gold-light:#f5d77e;
-    --cream:#f0ece2;
-    --blue-soft:#a8bcd8;
-    --blue-pale:#c8d8f0;
+    --gold-dark:#8a6d21;
+    --page:#f4f4f4;
+    --card:#ffffff;
+    --ink:#333333;
+    --ink-soft:#5a6472;
+    --line:#e4e6ea;
     --crimson:#8f1d21;
     --crimson-light:#a8262b;
   }
 
   body{
-    font-family:'Helvetica Neue', Arial, sans-serif;
+    font-family:'Arial', Helvetica, sans-serif;
     line-height:1.6;
-    color:var(--cream);
-    background:var(--navy-deep);
+    color:var(--ink);
+    background:var(--page);
     -webkit-font-smoothing:antialiased;
   }
 
   .wrap{ max-width:1100px; margin:0 auto; padding:0 22px; }
 
-  a{ color:var(--gold-light); }
-
   /* ---------- NAV ---------- */
   .site-nav{
     background:var(--navy);
-    border-bottom:3px solid var(--gold);
+    border-bottom:4px solid var(--gold);
     position:sticky; top:0; z-index:100;
+    box-shadow:0 2px 10px rgba(0,0,0,0.25);
   }
   .site-nav .wrap{
     display:flex; align-items:center; justify-content:space-between;
     flex-wrap:wrap; gap:12px; padding-top:14px; padding-bottom:14px;
   }
   .nav-brand{ display:flex; align-items:center; gap:12px; text-decoration:none; }
-  .nav-brand img{ height:46px; width:auto; }
+  .nav-brand img{ height:44px; width:auto; }
   .nav-brand span{
-    color:var(--gold-light); font-weight:bold; font-size:1.02rem;
-    letter-spacing:0.5px; line-height:1.2;
+    color:#ffffff; font-weight:bold; font-size:0.95rem;
+    letter-spacing:0.4px; line-height:1.2;
   }
-  .nav-brand small{ display:block; color:var(--blue-soft); font-size:0.72rem; font-weight:normal; letter-spacing:1px; }
-  .nav-links{ display:flex; flex-wrap:wrap; gap:6px; }
+  .nav-brand small{ display:block; color:var(--gold); font-size:0.7rem; font-weight:normal; letter-spacing:1px; text-transform:uppercase; }
+  .nav-links{ display:flex; flex-wrap:wrap; gap:4px; }
   .nav-links a{
-    color:var(--blue-pale); text-decoration:none; font-size:0.86rem;
-    letter-spacing:1.2px; text-transform:uppercase; font-weight:bold;
-    padding:8px 12px; border-radius:4px; transition:all 0.25s ease;
+    color:#c8d8f0; text-decoration:none; font-size:0.72rem;
+    letter-spacing:1px; text-transform:uppercase; font-weight:bold;
+    padding:8px 12px; border-radius:3px; transition:all 0.2s ease;
   }
   .nav-links a:hover, .nav-links a:focus{ color:var(--navy); background:var(--gold-light); }
   .nav-links a.current{ color:var(--gold-light); border-bottom:2px solid var(--gold); border-radius:0; }
@@ -69,197 +70,199 @@
   /* ---------- HERO ---------- */
   .page-hero{
     background:linear-gradient(160deg, var(--navy) 0%, var(--navy-mid) 55%, var(--navy) 100%);
-    padding:70px 0 60px; text-align:center; border-bottom:1px solid rgba(201,168,76,0.25);
+    padding:64px 0 56px; text-align:center;
   }
   .eyebrow{
     display:inline-block; background:var(--gold); color:var(--navy);
-    font-size:0.74rem; font-weight:bold; letter-spacing:2.5px; text-transform:uppercase;
+    font-size:0.7rem; font-weight:bold; letter-spacing:2.5px; text-transform:uppercase;
     padding:7px 20px; border-radius:3px; margin-bottom:22px;
   }
   .page-hero h1{
-    font-size:3.1rem; font-weight:bold; letter-spacing:-0.5px; line-height:1.05;
+    font-size:3rem; font-weight:900; letter-spacing:1px; line-height:1.05;
     color:#ffffff; text-transform:uppercase; margin-bottom:8px;
   }
   .page-hero h1 em{ display:block; font-style:normal; color:var(--gold-light); }
   .page-hero .dates{
-    color:var(--gold-light); font-size:1.22rem; font-weight:bold;
+    color:var(--gold-light); font-size:1.2rem; font-weight:bold;
     letter-spacing:1.5px; margin-top:16px;
   }
-  .page-hero .place{ color:var(--blue-pale); font-size:1rem; margin-top:6px; }
-  .star-rule{
-    color:var(--gold); letter-spacing:8px; font-size:0.85rem; margin:26px 0 0; opacity:0.8;
-  }
+  .page-hero .place{ color:#c8d8f0; font-size:1rem; margin-top:6px; }
+  .star-rule{ color:var(--gold); letter-spacing:8px; font-size:0.8rem; margin:24px 0 0; opacity:0.85; }
+
+  .gold-bar{ height:4px; background:var(--gold); }
 
   /* ---------- DAY BLOCKS ---------- */
-  .day{ padding:60px 0 10px; }
-  .day-head{ border-left:5px solid var(--gold); padding-left:20px; margin-bottom:34px; }
+  .day{ padding:56px 0 8px; }
+  .day-head{ border-left:5px solid var(--gold); padding-left:20px; margin-bottom:30px; }
   .day-head h2{
-    font-size:2.2rem; text-transform:uppercase; letter-spacing:1px; color:#ffffff; line-height:1.1;
+    font-size:2.1rem; font-weight:900; text-transform:uppercase;
+    letter-spacing:0.5px; color:var(--navy); line-height:1.1;
   }
-  .day-head h2 span{ color:var(--gold-light); }
-  .day-head p{ color:var(--blue-soft); font-size:0.95rem; margin-top:6px; letter-spacing:0.5px; }
+  .day-head h2 span{ color:var(--gold-dark); }
+  .day-head p{ color:var(--ink-soft); font-size:0.95rem; margin-top:6px; }
 
   .event-card{
-    background:rgba(255,255,255,0.05);
-    border:1px solid rgba(201,168,76,0.32);
-    border-radius:10px; padding:32px 30px; margin-bottom:22px;
-    transition:border-color 0.3s ease, background 0.3s ease;
+    background:var(--card);
+    border:1px solid var(--line);
+    border-top:4px solid var(--navy);
+    border-radius:8px; padding:32px 30px; margin-bottom:24px;
+    box-shadow:0 3px 14px rgba(0,0,0,0.07);
   }
-  .event-card:hover{ border-color:rgba(245,215,126,0.6); background:rgba(255,255,255,0.075); }
   .event-card h3{
-    color:var(--gold-light); font-size:1.45rem; text-transform:uppercase;
-    letter-spacing:0.8px; margin-bottom:4px; line-height:1.2;
+    color:var(--navy); font-size:1.4rem; font-weight:900; text-transform:uppercase;
+    letter-spacing:0.5px; margin-bottom:4px; line-height:1.2;
   }
   .event-card .headline-time{
-    color:#ffffff; font-size:1.12rem; font-weight:bold; margin-bottom:18px;
+    color:var(--gold-dark); font-size:1.1rem; font-weight:bold; margin-bottom:20px;
   }
-  .facts{ list-style:none; margin-bottom:18px; }
+  .facts{ list-style:none; margin-bottom:20px; }
   .facts li{
-    display:flex; gap:14px; padding:9px 0;
-    border-bottom:1px solid rgba(201,168,76,0.14); font-size:0.98rem;
+    display:flex; gap:14px; padding:10px 0;
+    border-bottom:1px solid var(--line); font-size:0.97rem;
   }
   .facts li:last-child{ border-bottom:none; }
   .facts .label{
-    flex:0 0 118px; color:var(--gold); font-size:0.74rem; font-weight:bold;
-    letter-spacing:1.6px; text-transform:uppercase; padding-top:4px;
+    flex:0 0 118px; color:var(--gold-dark); font-size:0.72rem; font-weight:bold;
+    letter-spacing:1.5px; text-transform:uppercase; padding-top:4px;
   }
-  .facts .value{ flex:1; color:var(--cream); }
-  .facts .value small{ display:block; color:var(--blue-soft); font-size:0.86rem; margin-top:3px; }
+  .facts .value{ flex:1; color:var(--ink); }
+  .facts .value small{ display:block; color:var(--ink-soft); font-size:0.86rem; margin-top:3px; }
 
   .note{
-    background:rgba(201,168,76,0.09); border-left:3px solid var(--gold);
-    padding:14px 18px; border-radius:0 6px 6px 0; margin-bottom:20px;
+    background:#fbf7ea; border-left:4px solid var(--gold);
+    padding:16px 20px; border-radius:0 6px 6px 0; margin-bottom:22px;
   }
-  .note strong{ color:var(--gold-light); }
-  .note p{ color:var(--blue-pale); font-size:0.92rem; }
-  .note ul{ margin:8px 0 0 20px; color:var(--blue-pale); font-size:0.92rem; }
+  .note strong{ color:var(--navy); }
+  .note p{ color:#5a4f2e; font-size:0.92rem; }
+  .note ul{ margin:8px 0 0 20px; color:#5a4f2e; font-size:0.92rem; }
   .note ul li{ margin-bottom:4px; }
 
   .btn{
     display:inline-block; padding:13px 30px;
-    background:linear-gradient(135deg, var(--gold), var(--gold-light));
-    color:var(--navy); text-decoration:none; border-radius:50px;
-    font-weight:bold; font-size:0.94rem; letter-spacing:0.6px;
-    transition:all 0.3s ease; box-shadow:0 3px 12px rgba(201,168,76,0.3);
+    background:var(--gold); color:var(--navy);
+    text-decoration:none; border-radius:3px;
+    font-weight:bold; font-size:0.85rem; letter-spacing:1px;
+    text-transform:uppercase; transition:background 0.2s ease;
   }
-  .btn:hover, .btn:focus{ transform:translateY(-2px); box-shadow:0 6px 18px rgba(201,168,76,0.5); color:var(--navy-deep); }
+  .btn:hover, .btn:focus{ background:var(--gold-light); }
   .btn.ghost{
-    background:transparent; border:2px solid var(--gold); color:var(--gold-light); box-shadow:none;
+    background:transparent; border:2px solid var(--navy); color:var(--navy);
   }
-  .btn.ghost:hover, .btn.ghost:focus{ background:var(--gold); color:var(--navy); }
+  .btn.ghost:hover, .btn.ghost:focus{ background:var(--navy); color:#ffffff; }
+
+  /* ---------- INLINE FLYER ---------- */
+  .flyer-block{
+    margin-top:28px; padding-top:26px;
+    border-top:1px solid var(--line);
+    text-align:center;
+  }
+  .flyer-block .flyer-label{
+    color:var(--gold-dark); font-size:0.7rem; font-weight:bold;
+    letter-spacing:2.5px; text-transform:uppercase; margin-bottom:16px;
+  }
+  .flyer-block img{
+    width:100%; max-width:560px; height:auto; display:block;
+    margin:0 auto; border-radius:6px;
+    border:1px solid var(--line);
+    box-shadow:0 6px 22px rgba(0,0,0,0.16);
+  }
+  .flyer-block.wide img{ max-width:860px; }
+  .flyer-block .print-link{
+    display:inline-block; margin-top:16px; color:var(--navy);
+    font-size:0.78rem; font-weight:bold; letter-spacing:1px;
+    text-transform:uppercase; text-decoration:none;
+    border-bottom:2px solid var(--gold); padding-bottom:2px;
+  }
+  .flyer-block .print-link:hover, .flyer-block .print-link:focus{ color:var(--gold-dark); border-color:var(--navy); }
 
   /* ---------- RUN OF SHOW ---------- */
   .runsheet{ list-style:none; margin-top:6px; }
   .runsheet li{
     display:flex; gap:18px; padding:8px 0;
-    border-bottom:1px dashed rgba(201,168,76,0.18); font-size:0.95rem;
+    border-bottom:1px dashed var(--line); font-size:0.94rem;
   }
   .runsheet li:last-child{ border-bottom:none; }
-  .runsheet .t{ flex:0 0 84px; color:var(--gold-light); font-weight:bold; font-size:0.9rem; }
-  .runsheet .d{ flex:1; color:var(--blue-pale); }
+  .runsheet .t{ flex:0 0 84px; color:var(--gold-dark); font-weight:bold; font-size:0.88rem; }
+  .runsheet .d{ flex:1; color:var(--ink); }
 
   /* ---------- SATURDAY GRID ---------- */
   .allday-banner{
-    text-align:center; color:var(--gold); font-size:0.78rem; font-weight:bold;
+    text-align:center; color:var(--gold-dark); font-size:0.76rem; font-weight:bold;
     letter-spacing:3px; text-transform:uppercase; margin:36px 0 20px;
   }
   .allday-grid{ display:grid; grid-template-columns:repeat(4, 1fr); gap:18px; }
   .allday-card{
-    background:rgba(255,255,255,0.04); border:1px solid rgba(201,168,76,0.25);
-    border-radius:9px; padding:24px 20px;
+    background:var(--card); border:1px solid var(--line);
+    border-radius:8px; padding:24px 20px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.05);
   }
   .allday-card h4{
-    color:var(--gold-light); font-size:0.95rem; text-transform:uppercase;
-    letter-spacing:1px; margin-bottom:12px; line-height:1.25;
+    color:var(--navy); font-size:0.92rem; font-weight:900; text-transform:uppercase;
+    letter-spacing:0.5px; margin-bottom:14px; line-height:1.25;
+    padding-bottom:10px; border-bottom:2px solid var(--gold);
   }
   .allday-card ul{ list-style:none; }
   .allday-card ul li{
-    color:var(--blue-pale); font-size:0.89rem; padding-left:14px;
-    position:relative; margin-bottom:8px; line-height:1.45;
+    color:var(--ink); font-size:0.88rem; padding-left:14px;
+    position:relative; margin-bottom:9px; line-height:1.45;
   }
-  .allday-card ul li::before{ content:"•"; position:absolute; left:0; color:var(--gold); }
+  .allday-card ul li::before{ content:"•"; position:absolute; left:0; color:var(--gold-dark); font-weight:bold; }
   .comeandgo{
-    text-align:center; color:var(--gold-light); font-style:italic;
-    font-size:0.92rem; margin-top:20px;
+    text-align:center; color:var(--ink-soft); font-style:italic;
+    font-size:0.92rem; margin-top:22px;
   }
 
   .ceremony{
     background:linear-gradient(135deg, var(--crimson), var(--crimson-light));
-    border-radius:10px; padding:36px 32px; margin-top:32px;
-    border:1px solid rgba(245,215,126,0.4);
+    border-radius:8px; padding:36px 32px; margin-top:32px;
+    box-shadow:0 4px 18px rgba(143,29,33,0.28);
   }
   .ceremony .time-badge{
     display:inline-block; background:var(--gold-light); color:var(--navy);
-    font-weight:bold; font-size:0.95rem; letter-spacing:1px;
-    padding:6px 16px; border-radius:4px; margin-bottom:14px;
+    font-weight:bold; font-size:0.9rem; letter-spacing:1px;
+    padding:6px 16px; border-radius:3px; margin-bottom:14px;
   }
   .ceremony h3{
-    color:#ffffff; font-size:1.6rem; text-transform:uppercase;
-    letter-spacing:0.8px; margin-bottom:16px; line-height:1.15;
+    color:#ffffff; font-size:1.55rem; font-weight:900; text-transform:uppercase;
+    letter-spacing:0.5px; margin-bottom:16px; line-height:1.15;
   }
   .ceremony ul{ list-style:none; }
   .ceremony ul li{
-    color:#f5e6e6; font-size:0.97rem; padding-left:22px;
+    color:#f7e9e9; font-size:0.96rem; padding-left:22px;
     position:relative; margin-bottom:11px; line-height:1.55;
   }
   .ceremony ul li::before{ content:"★"; position:absolute; left:0; color:var(--gold-light); }
 
-  /* ---------- FLYERS ---------- */
-  .flyers{ padding:70px 0 20px; }
-  .section-head{ text-align:center; margin-bottom:38px; }
-  .section-head h2{
-    font-size:2rem; text-transform:uppercase; letter-spacing:1px; color:#ffffff;
-  }
-  .section-head p{ color:var(--blue-soft); margin-top:10px; font-size:0.98rem; }
-  .flyer-grid{ display:grid; grid-template-columns:repeat(3, 1fr); gap:26px; }
-  .flyer{
-    background:rgba(255,255,255,0.05); border:1px solid rgba(201,168,76,0.3);
-    border-radius:10px; padding:16px; text-align:center;
-    transition:transform 0.3s ease, border-color 0.3s ease;
-  }
-  .flyer:hover{ transform:translateY(-5px); border-color:rgba(245,215,126,0.65); }
-  .flyer a.thumb{ display:block; border-radius:6px; overflow:hidden; margin-bottom:14px; }
-  .flyer img{ width:100%; height:auto; display:block; }
-  .flyer h4{
-    color:var(--gold-light); font-size:1rem; text-transform:uppercase;
-    letter-spacing:0.8px; margin-bottom:5px; line-height:1.3;
-  }
-  .flyer p{ color:var(--blue-soft); font-size:0.86rem; margin-bottom:14px; }
-  .flyer .open-link{
-    display:inline-block; color:var(--gold-light); font-size:0.82rem;
-    font-weight:bold; letter-spacing:1px; text-transform:uppercase; text-decoration:none;
-    border-bottom:1px solid rgba(201,168,76,0.5); padding-bottom:2px;
-  }
-  .flyer .open-link:hover, .flyer .open-link:focus{ color:#ffffff; border-color:#ffffff; }
-
   /* ---------- CTA STRIP ---------- */
   .cta-strip{
-    background:linear-gradient(160deg, var(--navy) 0%, var(--navy-mid) 100%);
-    border-top:3px solid var(--gold); border-bottom:3px solid var(--gold);
-    text-align:center; padding:52px 22px; margin-top:70px;
+    background:var(--navy);
+    border-top:4px solid var(--gold);
+    text-align:center; padding:52px 22px; margin-top:64px;
   }
-  .cta-strip h2{ color:var(--gold-light); font-size:1.7rem; text-transform:uppercase; letter-spacing:1px; }
-  .cta-strip p{ color:var(--blue-pale); margin:12px auto 26px; max-width:620px; font-size:1rem; }
+  .cta-strip h2{ color:#ffffff; font-size:1.7rem; font-weight:900; text-transform:uppercase; letter-spacing:0.5px; }
+  .cta-strip p{ color:#c8d8f0; margin:14px auto 26px; max-width:620px; font-size:1rem; }
   .cta-strip .btn{ margin:6px 8px; }
+  .cta-strip .btn.ghost{ border-color:rgba(255,255,255,0.7); color:#ffffff; }
+  .cta-strip .btn.ghost:hover, .cta-strip .btn.ghost:focus{ background:#ffffff; color:var(--navy); }
 
   /* ---------- FOOTER ---------- */
-  .site-footer{ background:var(--navy-deep); text-align:center; padding:44px 22px 34px; }
-  .site-footer img{ height:66px; width:auto; margin-bottom:16px; }
+  .site-footer{ background:#060e1e; text-align:center; padding:44px 22px 34px; }
+  .site-footer img{ height:60px; width:auto; margin-bottom:16px; }
   .site-footer .name{ color:var(--gold-light); font-weight:bold; letter-spacing:1px; }
-  .site-footer .org{ color:var(--blue-soft); font-size:0.9rem; margin-top:5px; }
+  .site-footer .org{ color:#4a5a7a; font-size:0.88rem; margin-top:5px; }
   .footer-links{ margin:22px 0 18px; }
   .footer-links a{
-    color:var(--blue-pale); text-decoration:none; font-size:0.85rem;
-    letter-spacing:1px; margin:0 11px; line-height:2.2;
+    color:#7a95bb; text-decoration:none; font-size:0.83rem;
+    letter-spacing:0.5px; margin:0 11px; line-height:2.2;
   }
-  .footer-links a:hover, .footer-links a:focus{ color:var(--gold-light); }
+  .footer-links a:hover, .footer-links a:focus{ color:var(--gold); }
   .site-footer .fine{
-    color:#6f88ac; font-size:0.79rem; line-height:1.7;
+    color:#4a5a7a; font-size:0.77rem; line-height:1.7;
     max-width:760px; margin:0 auto; padding-top:18px;
-    border-top:1px solid rgba(201,168,76,0.18);
+    border-top:1px solid rgba(255,255,255,0.08);
   }
 
-  :focus-visible{ outline:3px solid var(--gold-light); outline-offset:3px; }
+  :focus-visible{ outline:3px solid var(--gold-dark); outline-offset:3px; }
 
   @media (prefers-reduced-motion: reduce){
     *{ transition:none !important; }
@@ -267,24 +270,22 @@
 
   @media (max-width: 900px){
     .allday-grid{ grid-template-columns:repeat(2, 1fr); }
-    .flyer-grid{ grid-template-columns:repeat(2, 1fr); }
   }
 
   @media (max-width: 640px){
-    .page-hero{ padding:48px 0 42px; }
-    .page-hero h1{ font-size:2.1rem; }
-    .day-head h2{ font-size:1.6rem; }
+    .page-hero{ padding:44px 0 40px; }
+    .page-hero h1{ font-size:2rem; }
+    .day-head h2{ font-size:1.55rem; }
     .event-card{ padding:24px 20px; }
     .facts li{ flex-direction:column; gap:2px; }
     .facts .label{ flex:none; padding-top:0; }
     .runsheet li{ gap:12px; }
-    .runsheet .t{ flex:0 0 70px; font-size:0.85rem; }
+    .runsheet .t{ flex:0 0 70px; font-size:0.84rem; }
     .allday-grid{ grid-template-columns:1fr; }
-    .flyer-grid{ grid-template-columns:1fr; }
     .ceremony{ padding:26px 22px; }
-    .ceremony h3{ font-size:1.25rem; }
-    .nav-brand span{ font-size:0.9rem; }
-    .nav-links a{ font-size:0.76rem; padding:7px 9px; }
+    .ceremony h3{ font-size:1.2rem; }
+    .nav-brand span{ font-size:0.85rem; }
+    .nav-links a{ font-size:0.66rem; padding:7px 8px; }
     .btn{ display:block; margin:8px 0; text-align:center; }
   }
 </style>
@@ -322,12 +323,14 @@
   </div>
 </header>
 
+<div class="gold-bar"></div>
+
 <!-- ===== FRIDAY ===== -->
 <section class="day">
   <div class="wrap">
     <div class="day-head">
       <h2>Friday · <span>October 9</span></h2>
-      <p>Two ticketed evening programs. Both require registration.</p>
+      <p>Two evening programs. Both require registration.</p>
     </div>
 
     <!-- Self-Defense Class -->
@@ -349,6 +352,12 @@
         </ul>
       </div>
       <p><a class="btn" href="https://www.eventbrite.com/e/a-south-dakota-safety-days-self-defense-class-tickets-1997980672977" target="_blank" rel="noopener">Register on Eventbrite</a></p>
+
+      <div class="flyer-block">
+        <p class="flyer-label">Class Flyer</p>
+        <img src="images/flyer-selfdefense.png" alt="Safety Starts With You self-defense class flyer — Friday October 9, 2026, 4 to 6 PM at Plankinton School Gym, $20 per person">
+        <a class="print-link" href="images/flyer-selfdefense.png" target="_blank" rel="noopener">Open Full Size for Printing</a>
+      </div>
     </div>
 
     <!-- PTSD 9-1-1 -->
@@ -375,6 +384,12 @@
         <a class="btn" href="https://www.eventbrite.com/e/ptsd-9-1-1-film-screening-panel-discussion-tickets-1996831373391" target="_blank" rel="noopener">Reserve a Free Seat</a>
         <a class="btn ghost" href="mailto:SouthDakotaSafetyDays@gmail.com?subject=PTSD%209-1-1%20Screening%20Question">Questions or Group Reservations</a>
       </p>
+
+      <div class="flyer-block wide">
+        <p class="flyer-label">Screening Flyer</p>
+        <img src="images/flyer-ptsd911.png" alt="PTSD 9-1-1 film screening and panel discussion flyer — Friday October 9, 2026 at Silo Market, doors 6:30 PM, free, ages 16 and up">
+        <a class="print-link" href="images/flyer-ptsd911.png" target="_blank" rel="noopener">Open Full Size for Printing</a>
+      </div>
     </div>
   </div>
 </section>
@@ -405,117 +420,3 @@
         <ul>
           <li>Fire trucks, ambulances, and law enforcement vehicles</li>
           <li>Avera Careflight mobile simulation</li>
-          <li>Firefighter games</li>
-        </ul>
-      </div>
-      <div class="allday-card">
-        <h4>Skills That Save Lives</h4>
-        <ul>
-          <li>Stop the Bleed training</li>
-          <li>Fire extinguisher training</li>
-          <li>How to become a firefighter, EMT, or law enforcement officer</li>
-        </ul>
-      </div>
-      <div class="allday-card">
-        <h4>For Kids</h4>
-        <ul>
-          <li>Art table and letters to first responders</li>
-          <li>Complete any kids' activity by 4:00 PM to enter the prize drawing</li>
-        </ul>
-      </div>
-      <div class="allday-card">
-        <h4>Also On Site</h4>
-        <ul>
-          <li>Food trucks</li>
-          <li>Vendor tables and displays</li>
-          <li>Silent auction</li>
-          <li>More activities to come</li>
-        </ul>
-      </div>
-    </div>
-
-    <p class="comeandgo">Come and go as you please — everything above runs continuously.</p>
-
-    <div class="ceremony">
-      <span class="time-badge">1:30 PM</span>
-      <h3>Ceremony and First Responders Awards</h3>
-      <ul>
-        <li>National anthem, welcome, and remarks from invited guests and county, city, and state representatives.</li>
-        <li>Recognition of the Aurora County proclamation that made October First Responders Appreciation Month, and of the statewide proclamation now carrying it to all 66 counties.</li>
-        <li>Awards presented to Aurora County firefighters, EMS providers, and law enforcement officers.</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- ===== FLYERS ===== -->
-<section class="flyers">
-  <div class="wrap">
-    <div class="section-head">
-      <h2>Event Flyers</h2>
-      <p>Click any flyer to open it full size — print it, share it, or post it around town.</p>
-    </div>
-    <div class="flyer-grid">
-
-      <div class="flyer">
-        <a class="thumb" href="images/flyer-promo.png" target="_blank" rel="noopener">
-          <img src="images/flyer-promo.png" alt="South Dakota Safety Days two-day event flyer for October 9 and 10, 2026">
-        </a>
-        <h4>Full Event Flyer</h4>
-        <p>Both days at a glance</p>
-        <a class="open-link" href="images/flyer-promo.png" target="_blank" rel="noopener">Open Full Size</a>
-      </div>
-
-      <div class="flyer">
-        <a class="thumb" href="images/flyer-selfdefense.png" target="_blank" rel="noopener">
-          <img src="images/flyer-selfdefense.png" alt="Safety Starts With You self-defense class flyer for Friday October 9, 2026">
-        </a>
-        <h4>Self-Defense Class</h4>
-        <p>Friday, 4:00 – 6:00 PM</p>
-        <a class="open-link" href="images/flyer-selfdefense.png" target="_blank" rel="noopener">Open Full Size</a>
-      </div>
-
-      <div class="flyer">
-        <a class="thumb" href="images/flyer-ptsd911.png" target="_blank" rel="noopener">
-          <img src="images/flyer-ptsd911.png" alt="PTSD 9-1-1 film screening and panel discussion flyer for Friday October 9, 2026">
-        </a>
-        <h4>PTSD 9-1-1 Screening</h4>
-        <p>Friday, doors at 6:30 PM</p>
-        <a class="open-link" href="images/flyer-ptsd911.png" target="_blank" rel="noopener">Open Full Size</a>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ===== CTA ===== -->
-<div class="cta-strip">
-  <h2>Be Part of the Weekend</h2>
-  <p>Reserve a vendor table, sponsor the event, or lend a hand as a volunteer. Every bit of it goes toward honoring Aurora County's first responders.</p>
-  <a class="btn" href="index.html#support">Support the Event</a>
-  <a class="btn ghost" href="volunteer.html">Volunteer With Us</a>
-</div>
-
-<!-- ===== FOOTER ===== -->
-<footer class="site-footer">
-  <img src="images/LOGO.png" alt="South Dakota Safety Days logo">
-  <p class="name">South Dakota Safety Days</p>
-  <p class="org">Organized by TilTechDoUsPart LLC · Plankinton, South Dakota</p>
-  <div class="footer-links">
-    <a href="index.html">Home</a>
-    <a href="schedule.html">Schedule</a>
-    <a href="safety-resources.html">Safety Resources</a>
-    <a href="volunteer.html">Volunteer</a>
-    <a href="mailto:SouthDakotaSafetyDays@gmail.com">Contact</a>
-    <a href="https://www.facebook.com/profile.php?id=61577199266169" target="_blank" rel="noopener">Facebook</a>
-    <a href="https://www.instagram.com/southdakotasafetydays/" target="_blank" rel="noopener">Instagram</a>
-  </div>
-  <p class="fine">
-    © 2026 South Dakota Safety Days. All rights reserved.<br>
-    South Dakota Safety Days is organized by TilTechDoUsPart LLC, a for-profit limited liability company. All contributions, sponsorships, and event support are not charitable donations and are not tax deductible.<br>
-    Schedule and activities are subject to change. Please check back for updates.
-  </p>
-</footer>
-
-</body>
-</html>
