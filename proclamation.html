@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proclamations | South Dakota Safety Days</title>
+<meta name="description" content="Aurora County was the first county in South Dakota to proclaim October as First Responders Appreciation Month. In January 2026, Governor Larry Rhoden signed a statewide proclamation.">
+<meta property="og:title" content="Proclamations | South Dakota Safety Days">
+<meta property="og:description" content="Aurora County led the way. South Dakota followed. See the official proclamations honoring our first responders.">
+<meta property="og:type" content="website">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Arial', sans-serif; line-height:1.6; color:#333; background:#f4f4f4; }
+.container { max-width:1200px; margin:0 auto; padding:0 20px; }
+a { text-decoration:none; }
+
+/* NAV */
+.site-nav { position:sticky; top:0; z-index:100; background:#0d1b3e; border-bottom:3px solid #c9a84c; }
+.nav-inner { max-width:1200px; margin:0 auto; padding:12px 20px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; }
+.nav-brand { display:flex; align-items:center; gap:12px; }
+.nav-brand img { height:48px; width:auto; }
+.nav-brand span { color:#f5d77e; font-weight:bold; font-size:1.05rem; letter-spacing:0.5px; }
+.nav-links { display:flex; align-items:center; gap:22px; flex-wrap:wrap; }
+.nav-links a { color:#c8d8f0; font-size:0.95rem; font-weight:bold; transition:color 0.25s ease; }
+.nav-links a:hover, .nav-links a.current { color:#f5d77e; }
+.nav-support { background:linear-gradient(135deg,#c9a84c,#f5d77e); color:#0d1b3e !important; padding:9px 20px; border-radius:50px; }
+.nav-support:hover { background:linear-gradient(135deg,#f5d77e,#ffe89e); }
+
+/* HERO */
+.page-hero { background:linear-gradient(160deg,#0d1b3e 0%,#1a2f5e 55%,#0d1b3e 100%); color:#fff; text-align:center; padding:70px 20px 60px; }
+.page-hero h1 { color:#f5d77e; font-size:2.8rem; letter-spacing:1px; text-shadow:0 2px 10px rgba(0,0,0,0.4); margin-bottom:14px; }
+.page-hero p { color:#c8d8f0; font-size:1.1rem; max-width:720px; margin:0 auto; }
+.hero-rule { width:80px; height:3px; background:linear-gradient(90deg,#c9a84c,#f5d77e,#c9a84c); border-radius:2px; margin:20px auto 0; }
+
+/* INTRO */
+.intro { background:#fff; border-radius:12px; padding:40px; margin:-35px auto 45px; box-shadow:0 8px 25px rgba(0,0,0,0.10); position:relative; }
+.intro p { margin-bottom:16px; font-size:1.05rem; }
+.intro p:last-child { margin-bottom:0; }
+.intro strong { color:#0d1b3e; }
+
+/* PROCLAMATION CARDS */
+.proc-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:28px; margin-bottom:50px; }
+.proc-card { background:#fff; border-radius:12px; overflow:hidden; box-shadow:0 6px 20px rgba(0,0,0,0.10); display:flex; flex-direction:column; transition:transform 0.3s ease, box-shadow 0.3s ease; }
+.proc-card:hover { transform:translateY(-5px); box-shadow:0 12px 32px rgba(0,0,0,0.18); }
+.proc-badge { background:#0d1b3e; color:#f5d77e; font-size:0.72rem; font-weight:bold; letter-spacing:2.5px; text-transform:uppercase; text-align:center; padding:11px; }
+.proc-img-wrap { background:#e9edf3; padding:22px; cursor:zoom-in; }
+.proc-img-wrap img { width:100%; height:auto; display:block; border:1px solid #d4dae3; box-shadow:0 4px 14px rgba(0,0,0,0.18); }
+.proc-body { padding:26px 28px 30px; flex:1; }
+.proc-body h2 { color:#0d1b3e; font-size:1.45rem; margin-bottom:6px; }
+.proc-date { color:#8a7128; font-weight:bold; font-size:0.9rem; letter-spacing:0.5px; margin-bottom:14px; }
+.proc-body p { font-size:0.98rem; color:#444; }
+.proc-tap { display:block; text-align:center; font-size:0.82rem; color:#7a8ba5; padding-bottom:14px; }
+
+/* GALLERY */
+.gallery-section { background:linear-gradient(160deg,#0d1b3e 0%,#1a2f5e 55%,#0d1b3e 100%); border-radius:12px; padding:50px 40px; margin-bottom:55px; }
+.gallery-section h2 { color:#f5d77e; font-size:2rem; text-align:center; letter-spacing:1px; }
+.gallery-section .sub { color:#c8d8f0; text-align:center; max-width:620px; margin:12px auto 0; }
+.gallery-rule { width:70px; height:3px; background:linear-gradient(90deg,#c9a84c,#f5d77e,#c9a84c); border-radius:2px; margin:18px auto 36px; }
+.gallery-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+.gallery-grid figure { border-radius:10px; overflow:hidden; border:1px solid rgba(201,168,76,0.35); background:rgba(255,255,255,0.06); cursor:zoom-in; }
+.gallery-grid img { width:100%; height:230px; object-fit:cover; display:block; transition:transform 0.4s ease; }
+.gallery-grid figure:hover img { transform:scale(1.06); }
+.gallery-grid figcaption { color:#c8d8f0; font-size:0.85rem; text-align:center; padding:11px 8px; }
+
+/* CTA */
+.cta-strip { background:#fff; border-radius:12px; padding:38px; text-align:center; box-shadow:0 6px 20px rgba(0,0,0,0.10); margin-bottom:55px; }
+.cta-strip h3 { color:#0d1b3e; font-size:1.5rem; margin-bottom:10px; }
+.cta-strip p { color:#555; margin-bottom:22px; }
+.cta-btn { display:inline-block; margin:6px; padding:14px 30px; border-radius:50px; font-weight:bold; font-size:0.98rem; transition:all 0.3s ease; }
+.cta-gold { background:linear-gradient(135deg,#c9a84c,#f5d77e); color:#0d1b3e; box-shadow:0 3px 12px rgba(201,168,76,0.35); }
+.cta-gold:hover { transform:translateY(-2px); box-shadow:0 6px 18px rgba(201,168,76,0.55); }
+.cta-navy { background:#0d1b3e; color:#f5d77e; }
+.cta-navy:hover { background:#1a2f5e; transform:translateY(-2px); }
+
+/* FOOTER */
+.footer { background:#0d1b3e; color:#c8d8f0; text-align:center; padding:34px 20px; border-top:3px solid #c9a84c; }
+.footer p { font-size:0.9rem; margin-bottom:6px; }
+.footer a { color:#f5d77e; }
+
+/* LIGHTBOX */
+.lightbox { display:none; position:fixed; inset:0; background:rgba(5,10,25,0.94); z-index:999; align-items:center; justify-content:center; padding:30px; }
+.lightbox.open { display:flex; }
+.lightbox img { max-width:100%; max-height:92vh; box-shadow:0 10px 40px rgba(0,0,0,0.6); }
+.lightbox-close { position:absolute; top:18px; right:26px; color:#f5d77e; font-size:2.6rem; line-height:1; cursor:pointer; background:none; border:none; }
+
+@media (max-width:900px) {
+  .proc-grid { grid-template-columns:1fr; }
+  .gallery-grid { grid-template-columns:repeat(2,1fr); }
+}
+@media (max-width:600px) {
+  .page-hero h1 { font-size:1.9rem; }
+  .intro { padding:26px; }
+  .gallery-section { padding:35px 20px; }
+  .gallery-grid { grid-template-columns:1fr; }
+  .nav-links { gap:14px; font-size:0.85rem; }
+  .nav-brand img { height:38px; }
+  .nav-brand span { font-size:0.9rem; }
+}
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a class="nav-brand" href="index.html">
+      <img src="images/LOGO.png" alt="South Dakota Safety Days Logo">
+      <span>South Dakota Safety Days</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="schedule.html">Schedule</a>
+      <a href="proclamation.html" class="current">Proclamations</a>
+      <a href="volunteer.html">Volunteer</a>
+      <a href="index.html#support" class="nav-support">Support Us</a>
+    </div>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <h1>Official Proclamations</h1>
+  <p>Aurora County led the way. South Dakota followed. These are the official documents recognizing October as First Responders Appreciation Month.</p>
+  <div class="hero-rule"></div>
+</header>
+
+<div class="container">
+
+  <section class="intro">
+    <p>In <strong>November 2025</strong>, Aurora County became the first county in South Dakota to officially proclaim October as First Responders Appreciation Month. It was a small county making a big statement — that the firefighters, law enforcement officers, EMTs, paramedics, and 911 dispatchers who show up at all hours deserve to be recognized by name.</p>
+    <p>Two months later, on <strong>January 21, 2026</strong>, Governor Larry Rhoden signed a proclamation designating October 2026 as First Responders Appreciation Month for the entire State of South Dakota. What started at a county courthouse in Plankinton now stands for all 66 counties.</p>
+    <p>South Dakota Safety Days exists to honor that commitment — and to give our communities a place to say thank you in person.</p>
+  </section>
+
+  <section class="proc-grid">
+    <article class="proc-card">
+      <div class="proc-badge">&#9632; Where It Started</div>
+      <div class="proc-img-wrap" data-full="images/proclamation-aurora.jpg">
+        <img src="images/proclamation-aurora.jpg" alt="Aurora County proclamation designating October as First Responders Appreciation Month">
+      </div>
+      <span class="proc-tap">Click the image to view full size</span>
+      <div class="proc-body">
+        <h2>Aurora County Proclamation</h2>
+        <div class="proc-date">November 2025</div>
+        <p>The first county proclamation of its kind in South Dakota, adopted by the Aurora County Commission. It recognizes the courage and daily service of local first responders and sets a precedent we hope every county in the state will follow.</p>
+      </div>
+    </article>
+
+    <article class="proc-card">
+      <div class="proc-badge">&#9632; Statewide Recognition</div>
+      <div class="proc-img-wrap" data-full="images/proclamation-state.jpg">
+        <img src="images/proclamation-state.jpg" alt="State of South Dakota proclamation signed by Governor Larry Rhoden">
+      </div>
+      <span class="proc-tap">Click the image to view full size</span>
+      <div class="proc-body">
+        <h2>State of South Dakota Proclamation</h2>
+        <div class="proc-date">January 21, 2026 &middot; Gov. Larry Rhoden</div>
+        <p>Signed by Governor Larry Rhoden, this proclamation designates October 2026 as First Responders Appreciation Month across South Dakota — extending Aurora County's leadership to every community in the state.</p>
+      </div>
+    </article>
+  </section>
+
+  <section class="gallery-section">
+    <h2>The People Behind the Proclamation</h2>
+    <p class="sub">Our neighbors. Our volunteers. The crews who answer the call in Aurora County and across South Dakota.</p>
+    <div class="gallery-rule"></div>
+    <div class="gallery-grid">
+      <figure data-full="images/slide5.jpg">
+        <img src="images/slide5.jpg" alt="Firefighters">
+        <figcaption>Fire &amp; Rescue</figcaption>
+      </figure>
+      <figure data-full="images/slide7.jpg">
+        <img src="images/slide7.jpg" alt="Firefighter in action">
+        <figcaption>On the Line</figcaption>
+      </figure>
+      <figure data-full="images/slide4.jpg">
+        <img src="images/slide4.jpg" alt="Emergency medical services">
+        <figcaption>EMS &amp; Paramedics</figcaption>
+      </figure>
+      <figure data-full="images/slide3.jpg">
+        <img src="images/slide3.jpg" alt="Law enforcement officers">
+        <figcaption>Law Enforcement</figcaption>
+      </figure>
+      <figure data-full="images/slide6.jpg">
+        <img src="images/slide6.jpg" alt="K-9 unit">
+        <figcaption>K-9 Unit</figcaption>
+      </figure>
+      <figure data-full="images/slide1.png">
+        <img src="images/slide1.png" alt="South Dakota Safety Days">
+        <figcaption>Aurora County Strong</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="cta-strip">
+    <h3>Be Part of October 2026</h3>
+    <p>South Dakota Safety Days is October 9 &amp; 10, 2026 in Plankinton. Come out, bring the kids, and meet the crews.</p>
+    <a href="schedule.html" class="cta-btn cta-navy">See the Schedule</a>
+    <a href="index.html#support" class="cta-btn cta-gold">Support the Event</a>
+  </section>
+
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <p>&copy; 2026 South Dakota Safety Days &middot; Organized by TilTechDoUsPart LLC</p>
+    <p>Contributions are not tax-deductible as charitable donations.</p>
+    <p><a href="mailto:SouthDakotaSafetyDays@gmail.com">SouthDakotaSafetyDays@gmail.com</a></p>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+  <img id="lightboxImg" src="" alt="Enlarged view">
+</div>
+
+<script>
+  var lb = document.getElementById('lightbox');
+  var lbImg = document.getElementById('lightboxImg');
+
+  document.querySelectorAll('[data-full]').forEach(function (el) {
+    el.addEventListener('click', function () {
+      lbImg.src = el.getAttribute('data-full');
+      lb.classList.add('open');
+    });
+  });
+
+  function closeLb() { lb.classList.remove('open'); lbImg.src = ''; }
+  document.getElementById('lightboxClose').addEventListener('click', closeLb);
+  lb.addEventListener('click', function (e) { if (e.target === lb) closeLb(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeLb(); });
+</script>
+
+</body>
+</html>
