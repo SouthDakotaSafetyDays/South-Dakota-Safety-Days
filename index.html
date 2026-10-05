@@ -276,6 +276,7 @@
         }
         .hero-btn-primary {
             background: #c9a84c;
+            border: 2px solid #c9a84c;
             color: #0d1b3e;
             text-decoration: none;
             font-size: 12px;
@@ -769,7 +770,7 @@
             margin: 0 auto;
             padding: 0 24px;
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(5, 1fr);
             gap: 16px;
         }
         .bn-card {
@@ -875,9 +876,125 @@
             line-height: 1.8;
         }
 
+        /* ── THIS WEEKEND ── */
+        .weekend {
+            background: #f0f2f5;
+            padding: 50px 0;
+        }
+        .weekend-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        .weekend-head {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .weekend-head .mission-eyebrow { margin-bottom: 8px; }
+        .weekend-head h2 {
+            color: #0d1b3e;
+            font-size: 2rem;
+            font-weight: 900;
+        }
+        .weekend-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .wk-card {
+            background: white;
+            border-top: 4px solid #0d1b3e;
+            border-radius: 6px;
+            padding: 26px 24px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+            display: flex;
+            flex-direction: column;
+        }
+        .wk-day {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #8a6d21;
+            margin-bottom: 6px;
+        }
+        .wk-card h3 {
+            color: #0d1b3e;
+            font-size: 1.15rem;
+            font-weight: 900;
+            line-height: 1.25;
+            margin-bottom: 6px;
+        }
+        .wk-time {
+            color: #0d1b3e;
+            font-weight: 700;
+            font-size: 15px;
+            margin-bottom: 4px;
+        }
+        .wk-place {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+        .wk-card p.wk-desc {
+            color: #444;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 18px;
+            flex: 1;
+        }
+        .wk-btns { display: flex; gap: 10px; flex-wrap: wrap; }
+        .wk-btn {
+            display: inline-block;
+            background: #c9a84c;
+            color: #0d1b3e;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 10px 18px;
+            border-radius: 3px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        .wk-btn:hover { background: #f5d77e; }
+        .wk-btn.ghost {
+            background: transparent;
+            border: 2px solid #0d1b3e;
+            padding: 8px 16px;
+        }
+        .wk-btn.ghost:hover { background: #0d1b3e; color: white; }
+        .weekend-all {
+            text-align: center;
+            margin-top: 28px;
+        }
+
         /* ── RESPONSIVE ── */
         @media (max-width: 900px) {
-            .nav-links { display: none; }
+            /* Mobile menu: every page link stays visible under the logo */
+            .nav { position: relative; }
+            .nav-inner {
+                height: auto;
+                flex-wrap: wrap;
+                padding: 10px 16px 12px;
+                row-gap: 10px;
+            }
+            .nav-links {
+                order: 3;
+                width: 100%;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 6px;
+                padding-top: 10px;
+                border-top: 1px solid rgba(201,168,76,0.3);
+            }
+            .nav-links a {
+                font-size: 12px;
+                padding: 7px 11px;
+                border: 1px solid rgba(201,168,76,0.45);
+                border-radius: 3px;
+                color: #f5d77e;
+            }
+            .nav-links a:hover { background: #c9a84c; color: #0d1b3e; }
             .hero-h1 { font-size: 2.4rem; }
             .mission-inner { grid-template-columns: 1fr; gap: 30px; }
             .support-cards { grid-template-columns: 1fr; }
@@ -885,15 +1002,23 @@
             .contact-grid { grid-template-columns: 1fr; }
             .bottom-nav-inner { grid-template-columns: repeat(2, 1fr); }
             .stat-row-inner { grid-template-columns: 1fr; gap: 10px; }
+            .weekend-grid { grid-template-columns: 1fr; }
         }
         @media (max-width: 600px) {
-            .hero { height: 400px; }
+            .nav-brand-text { font-size: 12px; }
+            .nav-sup-btn { padding: 7px 12px; }
+            .social-bar { display: none; }
+            .hero { height: 470px; }
+            .hero-logo { display: none; }
+            .hero-content { gap: 10px; }
             .hero-h1 { font-size: 1.8rem; letter-spacing: 1px; }
-            .hero-logo img { height: 50px; }
-            .hero-tagline { font-size: 1rem; }
+            .hero-tagline { font-size: 0.95rem; }
+            .hero-btns { flex-direction: column; width: 100%; max-width: 300px; }
+            .hero-btn-primary, .hero-btn-secondary { text-align: center; padding: 11px 20px; }
             .bottom-nav-inner { grid-template-columns: repeat(2, 1fr); }
             .social-follow-btns { flex-direction: column; align-items: center; }
             .footer-top { flex-direction: column; }
+            .weekend-head h2 { font-size: 1.6rem; }
         }
     </style>
 </head>
@@ -968,7 +1093,8 @@
             <div class="hero-rule"></div>
             <p class="hero-tagline">Honoring the firefighters, law enforcement officers, EMTs, paramedics &amp; 911 dispatchers who keep our communities safe</p>
             <div class="hero-btns">
-                <a href="#mission" class="hero-btn-primary">Learn About the Event</a>
+                <a href="schedule.html" class="hero-btn-primary">See the Full Schedule</a>
+                <a href="#mission" class="hero-btn-secondary">Learn About the Event</a>
                 <a href="#support" class="hero-btn-secondary">Support First Responders</a>
             </div>
         </div>
@@ -1006,10 +1132,58 @@
                     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
                 </div>
                 <div class="stat-card-label">Event Hours</div>
-                <div class="stat-card-value">Friday 4pm–7pm &nbsp;·&nbsp; Saturday 11am–5pm</div>
+                <div class="stat-card-value">Fri · Self-Defense Class 4–6 PM<br>Fri · Film &amp; Panel 7–9:30 PM<br>Sat · Main Event 11 AM–5 PM</div>
             </div>
         </div>
     </div>
+
+    <div class="gold-bar"></div>
+
+    <!-- THIS WEEKEND -->
+    <section class="weekend" id="weekend">
+        <div class="weekend-inner">
+            <div class="weekend-head">
+                <div class="mission-eyebrow">October 9 &amp; 10 · Plankinton</div>
+                <h2>This Weekend</h2>
+            </div>
+            <div class="weekend-grid">
+                <div class="wk-card">
+                    <div class="wk-day">Friday · October 9</div>
+                    <h3>Self-Defense Class</h3>
+                    <div class="wk-time">4:00 – 6:00 PM · $20</div>
+                    <div class="wk-place">Plankinton School Gym, 404 Davenport Street</div>
+                    <p class="wk-desc">Taught by Shihan David Sheets of SoDak Kyokushin Karate. No experience needed. Everyone gets a certificate of completion.</p>
+                    <div class="wk-btns">
+                        <a href="https://www.eventbrite.com/e/a-south-dakota-safety-days-self-defense-class-tickets-1997980672977" class="wk-btn" target="_blank" rel="noopener">Register</a>
+                    </div>
+                </div>
+                <div class="wk-card">
+                    <div class="wk-day">Friday · October 9</div>
+                    <h3>PTSD 9-1-1 Film &amp; Panel</h3>
+                    <div class="wk-time">Doors 6:30 · 7:00 – 9:30 PM · Free</div>
+                    <div class="wk-place">Silo Market, 120 S Main St</div>
+                    <p class="wk-desc">The South Dakota premiere. Director Conrad Weaver is coming in person to lead a live panel with Sheriff Roman Briggs, Rep. Jim Halverson, Marty Link, Roswitha Konz, and Jonathan Busch. Ages 16+.</p>
+                    <div class="wk-btns">
+                        <a href="https://www.eventbrite.com/e/ptsd-9-1-1-film-screening-panel-discussion-tickets-1996831373391" class="wk-btn" target="_blank" rel="noopener">Reserve a Seat</a>
+                        <a href="schedule.html#panel" class="wk-btn ghost">Meet the Panel</a>
+                    </div>
+                </div>
+                <div class="wk-card">
+                    <div class="wk-day">Saturday · October 10</div>
+                    <h3>South Dakota Safety Days</h3>
+                    <div class="wk-time">11:00 AM – 5:00 PM · Free</div>
+                    <div class="wk-place">Aurora County Ag Building, 1302 E 1st St</div>
+                    <p class="wk-desc">Meet the crews and their rigs, try Stop the Bleed and fire extinguisher training, and bring the kids for activities and prizes. Awards ceremony at 1:30 PM.</p>
+                    <div class="wk-btns">
+                        <a href="schedule.html#saturday" class="wk-btn">Saturday Details</a>
+                    </div>
+                </div>
+            </div>
+            <div class="weekend-all">
+                <a href="schedule.html" class="hero-btn-primary" style="display:inline-block;">See the Full Schedule &amp; Flyers</a>
+            </div>
+        </div>
+    </section>
 
     <div class="gold-bar"></div>
 
@@ -1028,11 +1202,11 @@
                 <div class="mission-detail-box">
                     <h3>Event Details</h3>
                     <div class="detail-row"><strong>Date:</strong> October 9th &amp; 10th, 2026</div>
-                    <div class="detail-row"><strong>Time:</strong> Friday 4pm–7pm &nbsp;|&nbsp; Saturday 11am–5pm</div>
+                    <div class="detail-row"><strong>Friday:</strong> <span>Self-Defense Class 4–6 PM · Plankinton School Gym<br>PTSD 9-1-1 Film &amp; Panel 7–9:30 PM (doors 6:30) · Silo Market</span></div>
+                    <div class="detail-row"><strong>Saturday:</strong> <span>Main Event 11 AM–5 PM · Aurora County Ag Building</span></div>
                     <div class="detail-row"><strong>Location:</strong> Plankinton, South Dakota</div>
-                    <div class="detail-row"><strong>Venues:</strong> Aurora County Ag Building &amp; Plankinton School</div>
                     <div class="detail-row"><strong>Contact:</strong> SouthDakotaSafetyDays@gmail.com</div>
-                    <div class="detail-row" style="font-style:italic; color:#777; font-size:13px; margin-top:8px;"><em>Please check back closer to the event date for confirmed venue details and any updates.</em></div>
+                    <div class="detail-row" style="margin-top:8px;"><a href="schedule.html" style="color:#1a4a8a; font-weight:700;">See the full schedule &rarr;</a></div>
                 </div>
             </div>
 
@@ -1214,14 +1388,14 @@
                     </div>
                     <div class="contact-line">
                         <strong>Hours</strong>
-                        Friday 4pm–7pm<br>Saturday 11am–5pm
+                        Friday · Self-Defense Class 4–6 PM<br>Friday · Film &amp; Panel 7–9:30 PM (doors 6:30)<br>Saturday · Main Event 11 AM–5 PM
                     </div>
                     <div class="contact-line">
                         <strong>Organized By</strong>
                         TilTechDoUsPart LLC<br>Plankinton, South Dakota
                     </div>
                     <div class="contact-line">
-                        <em>Please check back closer to the event date for confirmed venue details and any updates.</em>
+                        <a href="schedule.html">See the full schedule &rarr;</a>
                     </div>
                 </div>
             </div>
