@@ -4,7 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Safety Resources - South Dakota Safety Days</title>
+    <meta name="description" content="Safety resources for South Dakota families from South Dakota Safety Days: home and family safety, emergency preparedness, farm, workplace and road safety, and resources for military families.">
     <style>
+        /* ── SITE NAV (matches Schedule page) ── */
+        .site-nav { background:#0d1b3e; border-bottom:4px solid #c9a84c; position:sticky; top:0; z-index:100; box-shadow:0 2px 10px rgba(0,0,0,0.25); }
+        .site-nav .wrap { max-width:1200px; margin:0 auto; padding:14px 20px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; }
+        .nav-brand { display:flex; align-items:center; gap:12px; text-decoration:none; }
+        .nav-brand img { height:44px; width:auto; }
+        .nav-brand span { color:#ffffff; font-weight:bold; font-size:0.95rem; line-height:1.2; }
+        .nav-brand small { display:block; color:#c9a84c; font-size:0.7rem; font-weight:normal; letter-spacing:1px; text-transform:uppercase; }
+        .nav-links { display:flex; flex-wrap:wrap; gap:4px; }
+        .nav-links a { color:#c8d8f0; text-decoration:none; font-size:0.72rem; letter-spacing:1px; text-transform:uppercase; font-weight:bold; padding:8px 12px; border-radius:3px; transition:all 0.2s ease; }
+        .nav-links a:hover { color:#0d1b3e; background:#f5d77e; }
+        .nav-links a.current { color:#f5d77e; border-bottom:2px solid #c9a84c; border-radius:0; }
+
+        /* ── FEATURED RESOURCE ── */
+        .featured-resource { background:linear-gradient(160deg, #0d1b3e 0%, #1a2f5e 60%, #0d1b3e 100%); border-top:5px solid #c9a84c; border-radius:10px; padding:36px 34px; margin-bottom:40px; color:white; box-shadow:0 6px 22px rgba(13,27,62,0.25); }
+        .featured-resource .fr-tag { display:inline-block; background:#c9a84c; color:#0d1b3e; font-size:0.75rem; font-weight:bold; letter-spacing:2px; text-transform:uppercase; padding:6px 14px; border-radius:3px; margin-bottom:16px; }
+        .featured-resource h2 { color:#f5d77e; font-size:1.9rem; line-height:1.25; margin-bottom:14px; }
+        .featured-resource p { color:#dce8f8; font-size:1.08rem; line-height:1.7; margin-bottom:14px; max-width:820px; }
+        .featured-resource .fr-source { color:#a8bcd8; font-size:0.92rem; }
+        .featured-resource .fr-btn { display:inline-block; margin-top:10px; background:#c9a84c; color:#0d1b3e; text-decoration:none; font-weight:bold; font-size:1.05rem; letter-spacing:0.5px; padding:16px 32px; border-radius:4px; transition:background 0.2s ease; }
+        .featured-resource .fr-btn:hover { background:#f5d77e; }
+
         * {
             margin: 0;
             padding: 0;
@@ -269,6 +291,15 @@
         }
         
         @media (max-width: 768px) {
+            .site-nav { position:relative; }
+            .site-nav .wrap { justify-content:center; padding:10px 16px 12px; }
+            .nav-links { width:100%; justify-content:center; gap:6px; padding-top:10px; border-top:1px solid rgba(201,168,76,0.3); }
+            .nav-links a { font-size:0.72rem; padding:7px 11px; border:1px solid rgba(201,168,76,0.45); color:#f5d77e; }
+            .nav-links a.current { background:#c9a84c; color:#0d1b3e; border-bottom:1px solid #c9a84c; border-radius:3px; }
+            .featured-resource { padding:26px 20px; }
+            .featured-resource h2 { font-size:1.45rem; }
+            .featured-resource p { font-size:1rem; }
+            .featured-resource .fr-btn { display:block; text-align:center; padding:15px 20px; }
             .header h1 {
                 font-size: 2rem;
             }
@@ -289,6 +320,24 @@
     </style>
 </head>
 <body>
+    <nav class="site-nav">
+        <div class="wrap">
+            <a class="nav-brand" href="index.html">
+                <img src="images/LOGO.png" alt="South Dakota Safety Days logo">
+                <span>South Dakota Safety Days<small>Aurora County &middot; Plankinton, SD</small></span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="schedule.html">Schedule</a>
+                <a href="proclamation.html">Proclamations</a>
+                <a href="index.html#support">Support</a>
+                <a href="volunteer.html">Volunteer</a>
+                <a href="safety-resources.html" class="current">Resources</a>
+                <a href="index.html#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
     <div class="header">
         <div class="container">
             <h1>Safety Resources</h1>
@@ -302,6 +351,14 @@
             <div class="intro-section">
                 <h2>Your Safety Resource Hub</h2>
                 <p>Welcome to South Dakota Safety Days' comprehensive resource center. Here you'll find essential safety information, guidelines, and resources to help keep you, your family, and your community safe. From home safety to agricultural practices, we provide trusted information backed by South Dakota authorities and national safety organizations.</p>
+            </div>
+
+            <div class="featured-resource" id="military-families">
+                <span class="fr-tag">&#9733; Featured Resource &middot; Military &amp; Veteran Families</span>
+                <h2>Resources for Military Families Raising Children With Disabilities</h2>
+                <p>A guide for military and veteran families caring for a child with special needs. It covers VA maternity care, TRICARE and ECHO, CHAMPVA, the Exceptional Family Member Program, and support groups made for military families.</p>
+                <p class="fr-source">Shared with us by Katie Lavender. Published by the Birth Injury Justice Center (childbirthinjuries.com).</p>
+                <a class="fr-btn" href="https://www.childbirthinjuries.com/resources/veterans/" target="_blank" rel="noopener noreferrer">Open the Guide &rarr;</a>
             </div>
 
             <div class="emergency-box">
@@ -601,14 +658,14 @@
             </section>
 
             <div class="alert-box">
-                <strong>Need More Information?</strong> Contact South Dakota Safety Days for additional resources, training opportunities, or to schedule a safety presentation for your community or organization.
+                <strong>Need More Information?</strong> Contact South Dakota Safety Days at <a href="mailto:SouthDakotaSafetyDays@gmail.com">SouthDakotaSafetyDays@gmail.com</a> for additional resources, training opportunities, or to schedule a safety presentation for your community or organization. See what's happening October 9 &amp; 10 on our <a href="schedule.html">event schedule</a>.
             </div>
         </div>
     </div>
 
     <div class="footer">
         <div class="container">
-            <p>&copy; 2025 South Dakota Safety Days. All rights reserved.</p>
+            <p>&copy; 2026 South Dakota Safety Days. All rights reserved.</p>
             <p>Promoting safety awareness across South Dakota communities</p>
             <p style="margin-top: 15px; font-size: 0.9rem;">Information verified through South Dakota state agencies and national safety organizations</p>
         </div>
