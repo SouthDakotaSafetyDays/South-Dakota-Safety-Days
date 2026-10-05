@@ -1,234 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Volunteer - South Dakota Safety Days</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f4f4f4;
-        }
-        
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        .header {
-            background: linear-gradient(135deg, #2c3e50, #3498db);
-            color: white;
-            text-align: center;
-            padding: 60px 0;
-            margin-bottom: 40px;
-        }
-        
-        .header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-        
-        .main-content {
-            background: white;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            margin-bottom: 40px;
-        }
-        
-        .intro {
-            text-align: center;
-            margin-bottom: 40px;
-            font-size: 1.1rem;
-            color: #555;
-        }
-
-        .intro a {
-            color: #3498db;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .intro a:hover {
-            text-decoration: underline;
-        }
-
-        .back-home {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .back-home-btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background: #3498db;
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
-        }
-
-        .back-home-btn:hover {
-            background: #2980b9;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
-        }
-        
-        .info-sections {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            margin-bottom: 40px;
-        }
-        
-        .info-section {
-            background: #ecf0f1;
-            padding: 25px;
-            border-radius: 8px;
-        }
-        
-        .info-section h3 {
-            color: #2c3e50;
-            margin-bottom: 15px;
-            font-size: 1.3rem;
-        }
-        
-        .info-section ul {
-            list-style-position: inside;
-            color: #555;
-        }
-        
-        .info-section li {
-            margin-bottom: 10px;
-            line-height: 1.5;
-        }
-
-        .form-container {
-            margin-top: 40px;
-        }
-
-        .form-container h2 {
-            color: #2c3e50;
-            text-align: center;
-            margin-bottom: 30px;
-            font-size: 2rem;
-            border-bottom: 3px solid #3498db;
-            padding-bottom: 10px;
-        }
-
-        .google-form-wrapper {
-            width: 100%;
-            max-width: 800px;
-            margin: 0 auto;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .google-form-wrapper iframe {
-            width: 100%;
-            min-height: 1200px;
-            border: none;
-        }
-        
-        .footer {
-            background: #2c3e50;
-            color: white;
-            text-align: center;
-            padding: 30px 0;
-            margin-top: 60px;
-        }
-        
-        @media (max-width: 768px) {
-            .header h1 {
-                font-size: 2rem;
-            }
-            
-            .main-content {
-                padding: 20px;
-            }
-
-            .info-sections {
-                grid-template-columns: 1fr;
-            }
-
-            .google-form-wrapper iframe {
-                min-height: 1400px;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Volunteer | South Dakota Safety Days · October 9–10, 2026</title>
+<meta name="description" content="Volunteer with South Dakota Safety Days in Plankinton, South Dakota. Help at the October 9–10, 2026 first responder appreciation event. Apply online.">
+<link rel="canonical" href="https://southdakotasafetydays.com/volunteer.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://southdakotasafetydays.com/volunteer.html">
+<meta property="og:title" content="Volunteer | South Dakota Safety Days">
+<meta property="og:description" content="Lend a hand at South Dakota Safety Days, October 9–10, 2026 in Plankinton. Apply online.">
+<meta property="og:image" content="https://southdakotasafetydays.com/images/flyer-promo-final.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+:root{
+  --navy:#0d1b3e; --navy-mid:#1a2f5e;
+  --gold:#c9a84c; --gold-light:#f5d77e; --gold-dark:#8a6d21;
+  --page:#f4f4f4; --card:#ffffff;
+  --ink:#333333; --ink-soft:#5a6472; --line:#e4e6ea;
+}
+body{ font-family:Arial, Helvetica, sans-serif; line-height:1.6; color:var(--ink); background:var(--page); }
+.wrap{ max-width:1100px; margin:0 auto; padding:0 22px; }
+.site-nav{ background:var(--navy); border-bottom:4px solid var(--gold); position:sticky; top:0; z-index:100; box-shadow:0 2px 10px rgba(0,0,0,0.25); }
+.site-nav .wrap{ display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; padding-top:14px; padding-bottom:14px; }
+.nav-brand{ display:flex; align-items:center; gap:12px; text-decoration:none; }
+.nav-brand img{ height:44px; width:auto; }
+.nav-brand span{ color:#ffffff; font-weight:bold; font-size:0.95rem; line-height:1.2; }
+.nav-brand small{ display:block; color:var(--gold); font-size:0.7rem; font-weight:normal; letter-spacing:1px; text-transform:uppercase; }
+.nav-links{ display:flex; flex-wrap:wrap; gap:4px; }
+.nav-links a{ color:#c8d8f0; text-decoration:none; font-size:0.72rem; letter-spacing:1px; text-transform:uppercase; font-weight:bold; padding:8px 12px; border-radius:3px; transition:all 0.2s ease; }
+.nav-links a:hover, .nav-links a:focus{ color:var(--navy); background:var(--gold-light); }
+.nav-links a.current{ color:var(--gold-light); border-bottom:2px solid var(--gold); border-radius:0; }
+.page-hero{ background:linear-gradient(160deg, var(--navy) 0%, var(--navy-mid) 55%, var(--navy) 100%); padding:64px 0 56px; text-align:center; }
+.eyebrow{ display:inline-block; background:var(--gold); color:var(--navy); font-size:0.7rem; font-weight:bold; letter-spacing:2.5px; text-transform:uppercase; padding:7px 20px; border-radius:3px; margin-bottom:22px; }
+.page-hero h1{ font-size:3rem; font-weight:900; letter-spacing:1px; line-height:1.05; color:#ffffff; text-transform:uppercase; margin-bottom:8px; }
+.page-hero h1 em{ display:block; font-style:normal; color:var(--gold-light); }
+.page-hero .dates{ color:var(--gold-light); font-size:1.2rem; font-weight:bold; letter-spacing:1.5px; margin-top:16px; }
+.page-hero .place{ color:#c8d8f0; font-size:1rem; margin-top:6px; }
+.star-rule{ color:var(--gold); letter-spacing:8px; font-size:0.8rem; margin:24px 0 0; }
+.gold-bar{ height:4px; background:var(--gold); }
+.content{ padding:52px 0 8px; }
+.intro{ background:var(--card); border:1px solid var(--line); border-left:5px solid var(--gold); border-radius:0 8px 8px 0; padding:26px 28px; font-size:1.05rem; color:var(--ink); margin-bottom:32px; box-shadow:0 3px 14px rgba(0,0,0,0.05); }
+.intro a{ color:var(--navy); font-weight:bold; text-decoration:none; border-bottom:2px solid var(--gold); word-break:break-word; }
+.intro a:hover, .intro a:focus{ color:var(--gold-dark); }
+.info-grid{ display:grid; grid-template-columns:repeat(3, 1fr); gap:18px; margin-bottom:44px; }
+.info-card{ background:var(--card); border:1px solid var(--line); border-top:4px solid var(--navy); border-radius:8px; padding:24px 22px; box-shadow:0 2px 10px rgba(0,0,0,0.05); }
+.info-card h3{ color:var(--navy); font-size:1rem; font-weight:900; text-transform:uppercase; letter-spacing:0.5px; margin-bottom:14px; padding-bottom:10px; border-bottom:2px solid var(--gold); }
+.info-card ul{ list-style:none; }
+.info-card li{ color:var(--ink); font-size:0.94rem; padding-left:16px; position:relative; margin-bottom:10px; line-height:1.5; }
+.info-card li::before{ content:"\2605"; position:absolute; left:0; color:var(--gold-dark); font-size:0.75rem; top:3px; }
+.form-card{ background:var(--card); border:1px solid var(--line); border-top:4px solid var(--gold); border-radius:8px; padding:32px 24px; box-shadow:0 3px 14px rgba(0,0,0,0.07); }
+.form-card h2{ color:var(--navy); font-size:1.7rem; font-weight:900; text-transform:uppercase; text-align:center; margin-bottom:6px; }
+.form-card .sub{ text-align:center; color:var(--ink-soft); font-size:0.95rem; margin-bottom:24px; }
+.google-form-wrapper{ width:100%; max-width:800px; margin:0 auto; border-radius:6px; overflow:hidden; border:1px solid var(--line); }
+.google-form-wrapper iframe{ width:100%; min-height:1200px; border:none; display:block; }
+.btn{ display:inline-block; padding:13px 30px; background:var(--gold); color:var(--navy); text-decoration:none; border-radius:3px; font-weight:bold; font-size:0.85rem; letter-spacing:1px; text-transform:uppercase; transition:background 0.2s ease; }
+.btn:hover, .btn:focus{ background:var(--gold-light); }
+.btn.ghost{ background:transparent; border:2px solid rgba(255,255,255,0.7); color:#ffffff; }
+.btn.ghost:hover, .btn.ghost:focus{ background:#ffffff; color:var(--navy); }
+.cta-strip{ background:var(--navy); border-top:4px solid var(--gold); text-align:center; padding:52px 22px; margin-top:64px; }
+.cta-strip h2{ color:#ffffff; font-size:1.7rem; font-weight:900; text-transform:uppercase; }
+.cta-strip p{ color:#c8d8f0; margin:14px auto 26px; max-width:620px; font-size:1rem; }
+.cta-strip .btn{ margin:6px 8px; }
+.site-footer{ background:#060e1e; text-align:center; padding:44px 22px 34px; }
+.site-footer img{ height:60px; width:auto; margin-bottom:16px; }
+.site-footer .name{ color:var(--gold-light); font-weight:bold; letter-spacing:1px; }
+.site-footer .org{ color:#4a5a7a; font-size:0.88rem; margin-top:5px; }
+.footer-links{ margin:22px 0 18px; }
+.footer-links a{ color:#7a95bb; text-decoration:none; font-size:0.83rem; margin:0 11px; line-height:2.2; }
+.footer-links a:hover, .footer-links a:focus{ color:var(--gold); }
+.site-footer .fine{ color:#4a5a7a; font-size:0.77rem; line-height:1.7; max-width:760px; margin:0 auto; padding-top:18px; border-top:1px solid rgba(255,255,255,0.08); }
+:focus-visible{ outline:3px solid var(--gold-dark); outline-offset:3px; }
+@media (max-width: 900px){ .info-grid{ grid-template-columns:1fr; } }
+@media (max-width: 640px){
+  .page-hero{ padding:44px 0 40px; }
+  .page-hero h1{ font-size:2rem; }
+  .intro{ padding:20px 18px; }
+  .form-card{ padding:24px 12px; }
+  .form-card h2{ font-size:1.35rem; }
+  .google-form-wrapper iframe{ min-height:1400px; }
+  .site-nav{ position:relative; }
+  .site-nav .wrap{ justify-content:center; padding-top:10px; padding-bottom:12px; }
+  .nav-brand span{ font-size:0.85rem; }
+  .nav-links{ width:100%; justify-content:center; gap:6px; padding-top:10px; border-top:1px solid rgba(201,168,76,0.3); }
+  .nav-links a{ font-size:0.72rem; padding:7px 11px; border:1px solid rgba(201,168,76,0.45); color:var(--gold-light); }
+  .nav-links a.current{ background:var(--gold); color:var(--navy); border-bottom:1px solid var(--gold); border-radius:3px; }
+  .btn{ display:block; margin:8px 0; text-align:center; }
+}
+</style>
 </head>
 <body>
-    <div class="header">
-        <div class="container">
-            <h1>Volunteer With Us</h1>
-        </div>
-    </div>
-
-    <div class="container">
-        <div class="main-content">
-            <div class="back-home">
-                <a href="index.html" class="back-home-btn">← Back to Home</a>
-            </div>
-
-            <div class="intro">
-                <p>Join our team of dedicated volunteers at South Dakota Safety Days making communities safer. Whether you can help at events, assist with educational outreach, or support administrative tasks, your time makes a real difference. If you have specific questions, please email us at <a href="mailto:southdakotasafetydays@gmail.com">southdakotasafetydays@gmail.com</a></p>
-            </div>
-
-            <div class="info-sections">
-                <div class="info-section">
-                    <h3>Time Commitment</h3>
-                    <ul>
-                        <li>Flexible opportunities from one-time events to ongoing roles</li>
-                        <li>Most events require 3-6 hours of time</li>
-                        <li>Choose your own schedule and availability</li>
-                    </ul>
-                </div>
-
-                <div class="info-section">
-                    <h3>Volunteer Benefits</h3>
-                    <ul>
-                        <li>Make a meaningful impact in your community</li>
-                        <li>Certificate of service for volunteer hours</li>
-                        <li>Connect with fellow safety advocates</li>
-                    </ul>
-                </div>
-
-                <div class="info-section">
-                    <h3>Requirements</h3>
-                    <ul>
-                        <li>Must be 18 years or older (16+ with parental consent)</li>
-                        <li>Attend brief orientation session</li>
-                        <li>Commitment to promoting safety in our communities</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="form-container">
-                <h2>Application Form</h2>
-                <div class="google-form-wrapper">
-                    <iframe src="https://docs.google.com/forms/d/1vNKyS97ZrtwhZjE596FWhUBkSuoxaGzZ90T8l9MWDxo/viewform?embedded=true">Loading…</iframe>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="footer">
-        <div class="container">
-            <p>&copy; 2025 South Dakota Safety Days. All rights reserved.</p>
-        </div>
-    </div>
+<nav class="site-nav">
+<div class="wrap">
+<a class="nav-brand" href="index.html">
+<img src="images/LOGO.png" alt="South Dakota Safety Days logo">
+<span>South Dakota Safety Days<small>Aurora County &middot; Plankinton, SD</small></span>
+</a>
+<div class="nav-links">
+<a href="index.html">Home</a>
+<a href="schedule.html">Schedule</a>
+<a href="proclamation.html">Proclamations</a>
+<a href="index.html#support">Support</a>
+<a href="volunteer.html" class="current">Volunteer</a>
+<a href="safety-resources.html">Resources</a>
+<a href="index.html#contact">Contact</a>
+</div>
+</div>
+</nav>
+<header class="page-hero">
+<div class="wrap">
+<span class="eyebrow">October &mdash; First Responders Appreciation Month</span>
+<h1>Volunteer <em>With Us</em></h1>
+<p class="dates">October 9 &amp; 10, 2026</p>
+<p class="place">Plankinton, South Dakota</p>
+<p class="star-rule">&#9733; &#9733; &#9733; &#9733; &#9733; &#9733; &#9733;</p>
+</div>
+</header>
+<div class="gold-bar"></div>
+<section class="content">
+<div class="wrap">
+<div class="intro">
+<p>Join our team of dedicated volunteers at South Dakota Safety Days making communities safer. Whether you can help at events, assist with educational outreach, or support administrative tasks, your time makes a real difference. If you have specific questions, please email us at <a href="mailto:southdakotasafetydays@gmail.com">southdakotasafetydays@gmail.com</a></p>
+</div>
+<div class="info-grid">
+<div class="info-card">
+<h3>Time Commitment</h3>
+<ul>
+<li>Flexible opportunities from one-time events to ongoing roles</li>
+<li>Most events require 3-6 hours of time</li>
+<li>Choose your own schedule and availability</li>
+</ul>
+</div>
+<div class="info-card">
+<h3>Volunteer Benefits</h3>
+<ul>
+<li>Make a meaningful impact in your community</li>
+<li>Certificate of service for volunteer hours</li>
+<li>Connect with fellow safety advocates</li>
+</ul>
+</div>
+<div class="info-card">
+<h3>Requirements</h3>
+<ul>
+<li>Must be 18 years or older (16+ with parental consent)</li>
+<li>Attend brief orientation session</li>
+<li>Commitment to promoting safety in our communities</li>
+</ul>
+</div>
+</div>
+<div class="form-card">
+<h2>Application Form</h2>
+<p class="sub">Fill out the form below and we'll be in touch.</p>
+<div class="google-form-wrapper">
+<iframe src="https://docs.google.com/forms/d/1vNKyS97ZrtwhZjE596FWhUBkSuoxaGzZ90T8l9MWDxo/viewform?embedded=true" title="South Dakota Safety Days volunteer application form">Loading…</iframe>
+</div>
+</div>
+</div>
+</section>
+<div class="cta-strip">
+<h2>See What's Happening</h2>
+<p>Check the full weekend schedule, or support Aurora County's first responders another way.</p>
+<a class="btn" href="schedule.html">See the Schedule</a>
+<a class="btn ghost" href="index.html#support">Support the Event</a>
+</div>
+<footer class="site-footer">
+<img src="images/LOGO.png" alt="South Dakota Safety Days logo">
+<p class="name">South Dakota Safety Days</p>
+<p class="org">Organized by TilTechDoUsPart LLC &middot; Plankinton, South Dakota</p>
+<div class="footer-links">
+<a href="index.html">Home</a>
+<a href="schedule.html">Schedule</a>
+<a href="proclamation.html">Proclamations</a>
+<a href="safety-resources.html">Safety Resources</a>
+<a href="volunteer.html">Volunteer</a>
+<a href="index.html#contact">Contact</a>
+<a href="https://www.facebook.com/profile.php?id=61577199266169" target="_blank" rel="noopener">Facebook</a>
+<a href="https://www.instagram.com/southdakotasafetydays/" target="_blank" rel="noopener">Instagram</a>
+</div>
+<p class="fine">
+&copy; 2026 South Dakota Safety Days. All rights reserved.<br>
+South Dakota Safety Days is organized by TilTechDoUsPart LLC, a for-profit limited liability company. All contributions, sponsorships, and event support are not charitable donations and are not tax deductible.
+</p>
+</footer>
 </body>
 </html>
