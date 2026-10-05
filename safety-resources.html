@@ -19,9 +19,9 @@
         .nav-links a.current { color:#f5d77e; border-bottom:2px solid #c9a84c; border-radius:0; }
 
         /* ── FEATURED RESOURCE ── */
-        .featured-resource { background:linear-gradient(160deg, #0d1b3e 0%, #1a2f5e 60%, #0d1b3e 100%); border-top:5px solid #c9a84c; border-radius:10px; padding:36px 34px; margin-bottom:40px; color:white; box-shadow:0 6px 22px rgba(13,27,62,0.25); }
+        .featured-resource { background:linear-gradient(160deg, #0d1b3e 0%, #1a2f5e 60%, #0d1b3e 100%); border-top:5px solid #c9a84c; border-radius:10px; padding:36px 34px; margin:10px 0 40px; color:white; box-shadow:0 6px 22px rgba(13,27,62,0.25); }
         .featured-resource .fr-tag { display:inline-block; background:#c9a84c; color:#0d1b3e; font-size:0.75rem; font-weight:bold; letter-spacing:2px; text-transform:uppercase; padding:6px 14px; border-radius:3px; margin-bottom:16px; }
-        .featured-resource h2 { color:#f5d77e; font-size:1.9rem; line-height:1.25; margin-bottom:14px; }
+        .featured-resource h2, .section .featured-resource h2 { color:#f5d77e; font-size:1.9rem; line-height:1.25; margin-bottom:14px; border-bottom:none; padding-bottom:0; }
         .featured-resource p { color:#dce8f8; font-size:1.08rem; line-height:1.7; margin-bottom:14px; max-width:820px; }
         .featured-resource .fr-source { color:#a8bcd8; font-size:0.92rem; }
         .featured-resource .fr-btn { display:inline-block; margin-top:10px; background:#c9a84c; color:#0d1b3e; text-decoration:none; font-weight:bold; font-size:1.05rem; letter-spacing:0.5px; padding:16px 32px; border-radius:4px; transition:background 0.2s ease; }
@@ -47,21 +47,53 @@
         }
         
         .header {
-            background: linear-gradient(135deg, #2c3e50, #3498db);
+            background: linear-gradient(160deg, #0d1b3e 0%, #1a2f5e 55%, #0d1b3e 100%);
             color: white;
             text-align: center;
-            padding: 60px 0;
+            padding: 64px 0 56px;
+            border-bottom: 4px solid #c9a84c;
             margin-bottom: 40px;
+        }
+        
+        .header .eyebrow {
+            display: inline-block;
+            background: #c9a84c;
+            color: #0d1b3e;
+            font-size: 0.7rem;
+            font-weight: bold;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            padding: 7px 20px;
+            border-radius: 3px;
+            margin-bottom: 22px;
         }
         
         .header h1 {
             font-size: 3rem;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            font-weight: 900;
+            letter-spacing: 1px;
+            line-height: 1.05;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+        
+        .header h1 em {
+            display: block;
+            font-style: normal;
+            color: #f5d77e;
         }
         
         .header p {
-            font-size: 1.2rem;
+            color: #c8d8f0;
+            font-size: 1.05rem;
+            margin-top: 14px;
+        }
+        
+        .header .star-rule {
+            color: #c9a84c;
+            letter-spacing: 8px;
+            font-size: 0.8rem;
+            margin-top: 22px;
         }
         
         .main-content {
@@ -297,9 +329,10 @@
             .nav-links a { font-size:0.72rem; padding:7px 11px; border:1px solid rgba(201,168,76,0.45); color:#f5d77e; }
             .nav-links a.current { background:#c9a84c; color:#0d1b3e; border-bottom:1px solid #c9a84c; border-radius:3px; }
             .featured-resource { padding:26px 20px; }
-            .featured-resource h2 { font-size:1.45rem; }
+            .featured-resource h2, .section .featured-resource h2 { font-size:1.45rem; }
             .featured-resource p { font-size:1rem; }
             .featured-resource .fr-btn { display:block; text-align:center; padding:15px 20px; }
+            .header { padding: 44px 0 40px; }
             .header h1 {
                 font-size: 2rem;
             }
@@ -340,9 +373,10 @@
 
     <div class="header">
         <div class="container">
-            <h1>Safety Resources</h1>
+            <span class="eyebrow">October &mdash; First Responders Appreciation Month</span>
+            <h1>Safety <em>Resources</em></h1>
             <p>Comprehensive Safety Information for South Dakota Communities</p>
-            <a href="index.html" style="display: inline-block; margin-top: 20px; padding: 12px 30px; background: rgba(255,255,255,0.2); color: white; text-decoration: none; border-radius: 50px; font-weight: bold; border: 2px solid white; transition: all 0.3s ease;">← Back Home</a>
+            <p class="star-rule">&#9733; &#9733; &#9733; &#9733; &#9733; &#9733; &#9733;</p>
         </div>
     </div>
 
@@ -351,14 +385,6 @@
             <div class="intro-section">
                 <h2>Your Safety Resource Hub</h2>
                 <p>Welcome to South Dakota Safety Days' comprehensive resource center. Here you'll find essential safety information, guidelines, and resources to help keep you, your family, and your community safe. From home safety to agricultural practices, we provide trusted information backed by South Dakota authorities and national safety organizations.</p>
-            </div>
-
-            <div class="featured-resource" id="military-families">
-                <span class="fr-tag">&#9733; Featured Resource &middot; Military &amp; Veteran Families</span>
-                <h2>Resources for Military Families Raising Children With Disabilities</h2>
-                <p>A guide for military and veteran families caring for a child with special needs. It covers VA maternity care, TRICARE and ECHO, CHAMPVA, the Exceptional Family Member Program, and support groups made for military families.</p>
-                <p class="fr-source">Shared with us by Katie Lavender. Published by the Birth Injury Justice Center (childbirthinjuries.com).</p>
-                <a class="fr-btn" href="https://www.childbirthinjuries.com/resources/veterans/" target="_blank" rel="noopener noreferrer">Open the Guide &rarr;</a>
             </div>
 
             <div class="emergency-box">
@@ -396,6 +422,14 @@
                         <a href="https://www.poison.org" target="_blank" rel="noopener noreferrer">Poison Help Resources →</a>
                     </div>
                 </div>
+
+            <div class="featured-resource" id="military-families">
+                <span class="fr-tag">&#9733; Featured Resource &middot; Military &amp; Veteran Families</span>
+                <h2>Resources for Military Families Raising Children With Disabilities</h2>
+                <p>A guide for military and veteran families caring for a child with special needs. It covers VA maternity care, TRICARE and ECHO, CHAMPVA, the Exceptional Family Member Program, and support groups made for military families.</p>
+                <p class="fr-source">Shared with us by Katie Lavender. Published by the Birth Injury Justice Center (childbirthinjuries.com).</p>
+                <a class="fr-btn" href="https://www.childbirthinjuries.com/resources/veterans/" target="_blank" rel="noopener noreferrer">Open the Guide &rarr;</a>
+            </div>
 
                 <h3>Emergency Preparedness</h3>
                 <div class="resource-grid">
