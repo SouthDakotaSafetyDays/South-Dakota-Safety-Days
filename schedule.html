@@ -9,8 +9,8 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://southdakotasafetydays.com/schedule.html">
 <meta property="og:title" content="Event Schedule | South Dakota Safety Days">
-<meta property="og:description" content="Two days honoring Aurora County first responders. Friday self-defense class and PTSD 9-1-1 film premiere. Saturday demonstrations, kids activities and awards ceremony.">
-<meta property="og:image" content="https://southdakotasafetydays.com/images/flyer-promo.png">
+<meta property="og:description" content="Two days honoring Aurora County first responders. Friday self-defense class and the South Dakota premiere of PTSD 9-1-1 with a live panel. Saturday demonstrations, kids activities and awards ceremony.">
+<meta property="og:image" content="https://southdakotasafetydays.com/images/flyer-promo-final.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <style>
 * { margin:0; padding:0; box-sizing:border-box; }
@@ -104,7 +104,27 @@ body{ font-family:Arial, Helvetica, sans-serif; line-height:1.6; color:var(--ink
 .footer-links a:hover, .footer-links a:focus{ color:var(--gold); }
 .site-footer .fine{ color:#4a5a7a; font-size:0.77rem; line-height:1.7; max-width:760px; margin:0 auto; padding-top:18px; border-top:1px solid rgba(255,255,255,0.08); }
 :focus-visible{ outline:3px solid var(--gold-dark); outline-offset:3px; }
-@media (max-width: 900px){ .allday-grid{ grid-template-columns:repeat(2, 1fr); } }
+.intro{ font-size:1.02rem; color:var(--ink); margin-bottom:20px; }
+.premiere{ display:inline-block; background:var(--crimson); color:var(--gold-light); font-size:0.7rem; font-weight:bold; letter-spacing:2px; text-transform:uppercase; padding:5px 14px; border-radius:3px; margin-bottom:12px; }
+.panel{ background:#fbf8f0; border:1px solid #eadfba; border-radius:8px; padding:26px 24px; margin:6px 0 24px; scroll-margin-top:20px; }
+.panel-title{ color:var(--crimson); font-size:1.25rem; font-weight:900; letter-spacing:2px; text-transform:uppercase; text-align:center; margin-bottom:6px; }
+.panel-sub{ text-align:center; color:var(--ink-soft); font-size:0.9rem; margin-bottom:20px; }
+.moderator{ background:var(--navy); border-radius:6px; padding:18px 20px; display:flex; align-items:center; gap:16px; margin-bottom:18px; }
+.moderator .tag{ background:var(--gold); color:var(--navy); font-size:0.68rem; font-weight:bold; letter-spacing:2px; text-transform:uppercase; padding:6px 12px; border-radius:3px; flex-shrink:0; }
+.moderator .who{ color:#ffffff; font-size:1.2rem; font-weight:900; line-height:1.2; }
+.moderator .who small{ display:block; color:var(--gold-light); font-size:0.88rem; font-weight:normal; margin-top:3px; }
+.panelists{ display:grid; grid-template-columns:repeat(2, 1fr); gap:14px; }
+.panelist{ background:#ffffff; border-left:4px solid var(--crimson); border-radius:0 6px 6px 0; padding:14px 16px; }
+.panelist .name{ color:var(--navy); font-size:1.08rem; font-weight:900; line-height:1.25; }
+.panelist .role{ color:var(--crimson); font-weight:bold; font-size:0.9rem; margin-top:2px; }
+.panelist .org{ color:var(--ink); font-size:0.88rem; }
+.panelist .town{ color:var(--ink-soft); font-size:0.82rem; margin-top:2px; }
+.panel-time{ text-align:center; color:var(--crimson); font-weight:bold; letter-spacing:2px; text-transform:uppercase; font-size:0.85rem; margin-top:18px; }
+.flyer-pair{ display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:32px; }
+.flyer-pair .event-card{ margin-bottom:0; }
+.flyer-pair .flyer-block{ margin-top:0; padding-top:0; border-top:none; }
+#saturday{ scroll-margin-top:20px; }
+@media (max-width: 900px){ .allday-grid{ grid-template-columns:repeat(2, 1fr); } .flyer-pair{ grid-template-columns:1fr; } }
 @media (max-width: 640px){
   .page-hero{ padding:44px 0 40px; }
   .page-hero h1{ font-size:2rem; }
@@ -117,8 +137,15 @@ body{ font-family:Arial, Helvetica, sans-serif; line-height:1.6; color:var(--ink
   .allday-grid{ grid-template-columns:1fr; }
   .ceremony{ padding:26px 22px; }
   .ceremony h3{ font-size:1.2rem; }
+  .site-nav{ position:relative; }
+  .site-nav .wrap{ justify-content:center; padding-top:10px; padding-bottom:12px; }
   .nav-brand span{ font-size:0.85rem; }
-  .nav-links a{ font-size:0.66rem; padding:7px 8px; }
+  .nav-links{ width:100%; justify-content:center; gap:6px; padding-top:10px; border-top:1px solid rgba(201,168,76,0.3); }
+  .nav-links a{ font-size:0.72rem; padding:7px 11px; border:1px solid rgba(201,168,76,0.45); color:var(--gold-light); }
+  .nav-links a.current{ background:var(--gold); color:var(--navy); border-bottom:1px solid var(--gold); border-radius:3px; }
+  .panelists{ grid-template-columns:1fr; }
+  .moderator{ flex-direction:column; align-items:flex-start; gap:10px; }
+  .panel{ padding:20px 16px; }
   .btn{ display:block; margin:8px 0; text-align:center; }
 }
 </style>
@@ -133,10 +160,11 @@ body{ font-family:Arial, Helvetica, sans-serif; line-height:1.6; color:var(--ink
 <div class="nav-links">
 <a href="index.html">Home</a>
 <a href="schedule.html" class="current">Schedule</a>
+<a href="proclamation.html">Proclamations</a>
 <a href="index.html#support">Support</a>
 <a href="volunteer.html">Volunteer</a>
 <a href="safety-resources.html">Resources</a>
-<a href="mailto:SouthDakotaSafetyDays@gmail.com">Contact</a>
+<a href="index.html#contact">Contact</a>
 </div>
 </div>
 </nav>
@@ -154,7 +182,7 @@ body{ font-family:Arial, Helvetica, sans-serif; line-height:1.6; color:var(--ink
 <div class="wrap">
 <div class="day-head">
 <h2>Friday &middot; <span>October 9</span></h2>
-<p>Two evening programs. Both require registration.</p>
+<p>Two programs in two places. Start with the self-defense class at the school gym from 4 to 6 PM. Then head to Silo Market for the South Dakota premiere of PTSD 9-1-1 and a live panel from 7 to 9:30 PM. Both need registration.</p>
 </div>
 <div class="event-card">
 <h3>Self-Defense Class</h3>
@@ -181,8 +209,25 @@ body{ font-family:Arial, Helvetica, sans-serif; line-height:1.6; color:var(--ink
 </div>
 </div>
 <div class="event-card">
+<span class="premiere">&#9733; South Dakota Premiere &#9733;</span>
 <h3>PTSD 9-1-1 Film Screening &amp; Panel Discussion</h3>
 <p class="headline-time">Doors 6:30 PM &middot; Program 7:00 &ndash; 9:30 PM &middot; Free</p>
+<p class="intro">After the film, director Conrad Weaver leads a live conversation with people from Aurora County law enforcement, the South Dakota Legislature, the Department of Health, and local counseling and support services. Bring your questions.</p>
+<div class="panel" id="panel">
+<p class="panel-title">Meet the Panel</p>
+<p class="panel-sub">Live panel at 8:45 PM</p>
+<div class="moderator">
+<span class="tag">Moderator</span>
+<span class="who">Conrad Weaver<small>Director of PTSD 9-1-1 &middot; Coming in person to lead the discussion</small></span>
+</div>
+<div class="panelists">
+<div class="panelist"><p class="name">Sheriff Roman Briggs</p><p class="role">Aurora County Sheriff</p><p class="town">Plankinton</p></div>
+<div class="panelist"><p class="name">Rep. Jim Halverson</p><p class="role">State Representative, District 21</p><p class="org">Health &amp; Human Services Committee</p><p class="town">Pierre</p></div>
+<div class="panelist"><p class="name">Marty Link</p><p class="role">Rural Health Administrator</p><p class="org">SD Department of Health</p><p class="town">Sioux Falls</p></div>
+<div class="panelist"><p class="name">Roswitha Konz</p><p class="role">Clinical Director</p><p class="org">Dakota Counseling Institute</p><p class="town">Mitchell</p></div>
+<div class="panelist"><p class="name">Jonathan Busch</p><p class="role">Founder &amp; Director</p><p class="org">Engage Services</p><p class="town">White Lake</p></div>
+</div>
+</div>
 <ul class="facts">
 <li><span class="label">Where</span><span class="value">Silo Market<small>120 S Main St, Plankinton, South Dakota</small></span></li>
 <li><span class="label">Who</span><span class="value">Ages 16 and older<small>Limited seating &mdash; registration required</small></span></li>
@@ -191,7 +236,7 @@ body{ font-family:Arial, Helvetica, sans-serif; line-height:1.6; color:var(--ink
 <li><span class="t">6:30 PM</span><span class="d">Doors open</span></li>
 <li><span class="t">7:00 PM</span><span class="d">Welcome &amp; introductions</span></li>
 <li><span class="t">7:15 PM</span><span class="d">PTSD 9-1-1 documentary screening (84 min.)</span></li>
-<li><span class="t">8:45 PM</span><span class="d">Live panel discussion</span></li>
+<li><span class="t">8:45 PM</span><span class="d">Live panel discussion, moderated by director Conrad Weaver</span></li>
 <li><span class="t">9:30 PM</span><span class="d">Wrap-up &amp; closing</span></li>
 </ul>
 </span></li>
@@ -205,13 +250,13 @@ body{ font-family:Arial, Helvetica, sans-serif; line-height:1.6; color:var(--ink
 </p>
 <div class="flyer-block wide">
 <p class="flyer-label">Screening Flyer</p>
-<img src="images/flyer-ptsd911.png" alt="PTSD 9-1-1 film screening flyer for Friday October 9, 2026 at Silo Market">
-<a class="print-link" href="images/flyer-ptsd911.png" target="_blank" rel="noopener">Open Full Size for Printing</a>
+<img src="images/flyer-ptsd911-final.jpg" alt="PTSD 9-1-1 film screening and panel discussion flyer for Friday October 9, 2026 at Silo Market, with panelist names">
+<a class="print-link" href="images/flyer-ptsd911-final.jpg" target="_blank" rel="noopener">Open Full Size for Printing</a>
 </div>
 </div>
 </div>
 </section>
-<section class="day">
+<section class="day" id="saturday">
 <div class="wrap">
 <div class="day-head">
 <h2>Saturday &middot; <span>October 10</span></h2>
@@ -221,7 +266,7 @@ body{ font-family:Arial, Helvetica, sans-serif; line-height:1.6; color:var(--ink
 <h3>South Dakota Safety Days</h3>
 <p class="headline-time">Doors open 11:00 AM &middot; Event closes 5:00 PM</p>
 <ul class="facts">
-<li><span class="label">Where</span><span class="value">Aurora County Ag Building<small>Plankinton, South Dakota</small></span></li>
+<li><span class="label">Where</span><span class="value">Aurora County Ag Building<small>1302 E 1st St, Plankinton, South Dakota</small></span></li>
 <li><span class="label">Cost</span><span class="value">Free and open to the public</span></li>
 <li><span class="label">Why</span><span class="value">The first event of its kind in South Dakota &mdash; held because Aurora County made October First Responders Appreciation Month, and the state followed.</span></li>
 </ul>
@@ -271,11 +316,20 @@ body{ font-family:Arial, Helvetica, sans-serif; line-height:1.6; color:var(--ink
 <li>Awards presented to Aurora County firefighters, EMS providers, and law enforcement officers.</li>
 </ul>
 </div>
-<div class="event-card" style="margin-top:32px;">
-<div class="flyer-block" style="margin-top:0; padding-top:0; border-top:none;">
+<div class="flyer-pair">
+<div class="event-card">
+<div class="flyer-block">
+<p class="flyer-label">Kids &amp; Families Flyer &middot; Saturday</p>
+<img src="images/flyer-kids.jpg" alt="Meet First Responders kids flyer for Saturday October 10, 2026 at the Aurora County Ag Building, free admission">
+<a class="print-link" href="images/flyer-kids.jpg" target="_blank" rel="noopener">Open Full Size for Printing</a>
+</div>
+</div>
+<div class="event-card">
+<div class="flyer-block">
 <p class="flyer-label">Full Event Flyer &middot; Both Days</p>
-<img src="images/flyer-promo.png" alt="South Dakota Safety Days full event flyer for October 9 and 10, 2026">
-<a class="print-link" href="images/flyer-promo.png" target="_blank" rel="noopener">Open Full Size for Printing</a>
+<img src="images/flyer-promo-final.jpg" alt="South Dakota Safety Days full event flyer for October 9 and 10, 2026">
+<a class="print-link" href="images/flyer-promo-final.jpg" target="_blank" rel="noopener">Open Full Size for Printing</a>
+</div>
 </div>
 </div>
 </div>
@@ -293,9 +347,10 @@ body{ font-family:Arial, Helvetica, sans-serif; line-height:1.6; color:var(--ink
 <div class="footer-links">
 <a href="index.html">Home</a>
 <a href="schedule.html">Schedule</a>
+<a href="proclamation.html">Proclamations</a>
 <a href="safety-resources.html">Safety Resources</a>
 <a href="volunteer.html">Volunteer</a>
-<a href="mailto:SouthDakotaSafetyDays@gmail.com">Contact</a>
+<a href="index.html#contact">Contact</a>
 <a href="https://www.facebook.com/profile.php?id=61577199266169" target="_blank" rel="noopener">Facebook</a>
 <a href="https://www.instagram.com/southdakotasafetydays/" target="_blank" rel="noopener">Instagram</a>
 </div>
